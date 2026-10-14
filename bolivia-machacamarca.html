@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubre Machacamarca, Oruro, Bolivia: historia ferroviaria, paisajes altiplánicos y el Cementerio de Trenes." />
+  <title>Machacamarca | Historia sobre rieles</title>
+
+  <!-- Tailwind CSS por CDN: ideal para una maqueta rápida. Para producción, considera instalar Tailwind. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            cobre: '#bd6b43',
+            noche: '#171b1d',
+            arena: '#f4efe6'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background-image: linear-gradient(90deg, rgba(13,17,19,.82) 0%, rgba(13,17,19,.45) 55%, rgba(13,17,19,.1) 100%),
+        url('https://www.umviajante.com.br/images/2014/bolivia/img/cemiterio-trens.jpg.webp');
+      background-size: cover;
+      background-position: center;
+    }
+    .photo { transition: transform .5s ease; }
+    .photo-card:hover .photo { transform: scale(1.05); }
+  </style>
+</head>
+<body class="bg-arena text-noche antialiased">
+  <!-- Navegación -->
+  <header class="absolute inset-x-0 top-0 z-20 text-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 lg:px-8" aria-label="Navegación principal">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Machacamarca, inicio">
+        <span class="grid h-10 w-10 place-items-center rounded-full border border-white/50 text-lg">M</span>
+        <span class="leading-tight"><span class="block text-sm font-semibold tracking-[.22em]">MACHACAMARCA</span><span class="text-xs text-white/70">Oruro · Bolivia</span></span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm md:flex">
+        <a class="hover:text-orange-200" href="#historia">Historia</a>
+        <a class="hover:text-orange-200" href="#experiencias">Experiencias</a>
+        <a class="hover:text-orange-200" href="#galeria">Galería</a>
+        <a class="hover:text-orange-200" href="#visita">Planifica tu visita</a>
+      </div>
+      <button id="menuBtn" class="rounded-full border border-white/40 px-4 py-2 text-sm md:hidden" aria-expanded="false" aria-controls="mobileMenu">Menú</button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/15 bg-black/85 px-5 py-4 md:hidden">
+      <a class="block py-2" href="#historia">Historia</a>
+      <a class="block py-2" href="#experiencias">Experiencias</a>
+      <a class="block py-2" href="#galeria">Galería</a>
+      <a class="block py-2" href="#visita">Planifica tu visita</a>
+    </div>
+  </header>
+
+  <!-- Portada -->
+  <main>
+    <section id="inicio" class="hero-bg flex min-h-[92vh] items-end text-white">
+      <div class="mx-auto w-full max-w-7xl px-5 pb-20 pt-36 lg:px-8 lg:pb-28">
+        <p class="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.3em] text-orange-200"><span class="h-px w-10 bg-orange-200"></span> Un viaje por el altiplano</p>
+        <h1 class="max-w-4xl font-display text-5xl leading-[1.02] sm:text-6xl lg:text-8xl">Donde la historia<br><em class="font-normal text-orange-200">sigue sobre rieles.</em></h1>
+        <p class="mt-7 max-w-xl text-base leading-7 text-white/80 sm:text-lg">Descubre Machacamarca, un destino de memoria ferroviaria, horizontes abiertos y cultura altiplánica en el departamento de Oruro.</p>
+        <div class="mt-9 flex flex-wrap gap-4">
+          <a href="#historia" class="rounded-full bg-orange-200 px-6 py-3 text-sm font-semibold text-noche transition hover:bg-white">Explorar el destino <span aria-hidden="true">↗</span></a>
+          <a href="#galeria" class="rounded-full border border-white/50 px-6 py-3 text-sm font-semibold transition hover:bg-white/10">Ver fotografías</a>
+        </div>
+        <div class="mt-16 flex items-center gap-4 text-xs uppercase tracking-[.2em] text-white/60"><span class="h-px w-12 bg-white/40"></span> Oruro · Altiplano boliviano</div>
+      </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="historia" class="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-2 md:items-center lg:px-8 lg:py-28">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[.25em] text-cobre">Memoria y territorio</p>
+        <h2 class="mt-5 font-display text-4xl leading-tight sm:text-5xl">Un pueblo marcado<br>por el camino del tren.</h2>
+        <p class="mt-6 max-w-xl leading-7 text-stone-600">Machacamarca se encuentra en el altiplano de Oruro y forma parte de la historia ferroviaria de Bolivia. Su Museo Ferroviario conserva locomotoras, vagones y objetos que cuentan una etapa clave de la historia minera y ferroviaria del país.</p>
+        <p class="mt-4 max-w-xl leading-7 text-stone-600">Las locomotoras históricas y los vestigios ferroviarios recuerdan la época en que el tren conectaba poblaciones, centros mineros y rutas comerciales. Importante: el famoso Cementerio de Trenes al aire libre está en Uyuni, Potosí; las imágenes de la galería son referencias visuales de ese sitio, no fotografías verificadas de Machacamarca.</p>
+        <a href="#visita" class="mt-8 inline-flex items-center gap-3 border-b border-cobre pb-2 text-sm font-semibold hover:text-cobre">Prepara tu recorrido <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="relative">
+        <img class="h-[420px] w-full rounded-sm object-cover shadow-xl" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85" alt="Paisaje montañoso del altiplano al atardecer" loading="lazy">
+        <div class="absolute -bottom-6 -left-4 max-w-xs bg-white p-5 shadow-lg sm:-left-8">
+          <p class="font-display text-2xl">Historia viva</p>
+          <p class="mt-1 text-sm text-stone-500">Paisajes, memoria y cultura en el corazón de Oruro.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section id="experiencias" class="bg-[#e8dfd1] py-20 lg:py-24">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div><p class="text-xs font-bold uppercase tracking-[.25em] text-cobre">Descubre a tu ritmo</p><h2 class="mt-4 font-display text-4xl sm:text-5xl">Pequeñas grandes experiencias.</h2></div>
+          <p class="max-w-md text-sm leading-6 text-stone-600">Un destino para mirar con calma, fotografiar texturas y escuchar las historias que conserva el territorio.</p>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <article class="border-t border-stone-400 pt-6">
+            <span class="font-display text-3xl text-cobre">01</span>
+            <h3 class="mt-5 text-xl font-semibold">Memoria ferroviaria</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">Conoce la historia del tren en la región y observa sus huellas en el paisaje y la identidad local.</p>
+          </article>
+          <article class="border-t border-stone-400 pt-6">
+            <span class="font-display text-3xl text-cobre">02</span>
+            <h3 class="mt-5 text-xl font-semibold">Fotografía de paisaje</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">Busca líneas, contrastes, cielos amplios y detalles industriales que cuentan historias sin palabras.</p>
+          </article>
+          <article class="border-t border-stone-400 pt-6">
+            <span class="font-display text-3xl text-cobre">03</span>
+            <h3 class="mt-5 text-xl font-semibold">Cultura local</h3>
+            <p class="mt-3 text-sm leading-6 text-stone-600">Acércate con respeto a la comunidad, sus costumbres y las voces que mantienen viva la memoria del lugar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div><p class="text-xs font-bold uppercase tracking-[.25em] text-cobre">Postales del viaje</p><h2 class="mt-4 font-display text-4xl sm:text-5xl">Paisajes para recordar.</h2></div>
+          <p class="max-w-sm text-sm leading-6 text-stone-600">Las fotos muestran el Cementerio de Trenes de Uyuni, Potosí, como referencia visual. Para representar Machacamarca con precisión, añade fotografías propias del Museo Ferroviario local.</p>
+        </div>
+        <div class="grid auto-rows-[220px] gap-4 sm:grid-cols-2 lg:auto-rows-[260px] lg:grid-cols-3">
+          <figure class="photo-card group relative overflow-hidden sm:row-span-2 sm:row-start-1">
+            <img class="photo h-full w-full object-cover" src="https://www.umviajante.com.br/images/2014/bolivia/img/cemiterio-de-trens.jpg.webp" alt="Sendero entre árboles y paisaje natural" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-16 text-white"><span class="text-xs uppercase tracking-widest text-orange-200">01 / Territorio</span><p class="mt-1 font-display text-2xl">Horizontes abiertos</p></figcaption>
+          </figure>
+          <figure class="photo-card group relative overflow-hidden lg:col-span-2">
+            <img class="photo h-full w-full object-cover" src="https://image.geo.de/30118804/t/TB/v4/w1440/r0/-/09-salar-uyuni-bahnhof-m-9-dnyngj-jpg--66716-.jpg" alt="Paisaje amplio bajo un cielo dramático" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-14 text-white"><span class="text-xs uppercase tracking-widest text-orange-200">02 / Altiplano</span><p class="mt-1 font-display text-2xl">La inmensidad del paisaje</p></figcaption>
+          </figure>
+          <figure class="photo-card group relative overflow-hidden">
+            <img class="photo h-full w-full object-cover" src="https://static.wixstatic.com/media/108ff4_d9ab771b4e3d4b06801546f7734a1d37~mv2.jpg/v1/fill/w_980%2Ch_653%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/108ff4_d9ab771b4e3d4b06801546f7734a1d37~mv2.jpg" alt="Montañas bajo un cielo azul" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-14 text-white"><span class="text-xs uppercase tracking-widest text-orange-200">03 / Naturaleza</span><p class="mt-1 font-display text-2xl">Luz de altura</p></figcaption>
+          </figure>
+          <figure class="photo-card group relative overflow-hidden">
+            <img class="photo h-full w-full object-cover" src="https://m.cambio21.cl/image/5aff2d39cd49b045fd185290.jpg" alt="Texturas naturales y agua en movimiento" loading="lazy">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5 pt-14 text-white"><span class="text-xs uppercase tracking-widest text-orange-200">04 / Detalles</span><p class="mt-1 font-display text-2xl">Texturas del viaje</p></figcaption>
+          </figure>
+        </div>
+        <p class="mt-4 text-xs leading-5 text-stone-500">Nota: estas fotografías corresponden al Cementerio de Trenes de Uyuni, Potosí, y no a Machacamarca. Machacamarca destaca por su Museo Ferroviario.</p>
+      </div>
+    </section>
+
+    <!-- Visita -->
+    <section id="visita" class="bg-noche py-20 text-white lg:py-24">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 md:grid-cols-2 lg:px-8">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.25em] text-orange-200">Antes de salir</p>
+          <h2 class="mt-4 font-display text-4xl leading-tight sm:text-5xl">Haz espacio para<br><em class="font-normal text-orange-200">la aventura.</em></h2>
+          <p class="mt-6 max-w-lg leading-7 text-white/65">Organiza el transporte y confirma las condiciones de acceso con fuentes locales antes de viajar. Los horarios, servicios y accesos pueden cambiar.</p>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="border-t border-white/20 pt-5"><span class="text-xl">☼</span><h3 class="mt-3 font-semibold">Prepárate para la altura</h3><p class="mt-2 text-sm leading-6 text-white/60">Lleva agua, protección solar, gorra y ropa para cambios de temperatura.</p></div>
+          <div class="border-t border-white/20 pt-5"><span class="text-xl">⌖</span><h3 class="mt-3 font-semibold">Verifica la ruta</h3><p class="mt-2 text-sm leading-6 text-white/60">Consulta transporte, caminos y accesibilidad antes de iniciar el recorrido.</p></div>
+          <div class="border-t border-white/20 pt-5"><span class="text-xl">◎</span><h3 class="mt-3 font-semibold">Viaja con respeto</h3><p class="mt-2 text-sm leading-6 text-white/60">Respeta propiedades, señalización y espacios de trabajo. No subas a estructuras inestables.</p></div>
+          <div class="border-t border-white/20 pt-5"><span class="text-xl">✳</span><h3 class="mt-3 font-semibold">Apoya lo local</h3><p class="mt-2 text-sm leading-6 text-white/60">Si hay servicios disponibles, prioriza guías y emprendimientos de la comunidad.</p></div>
+        </div>
+      </div>
+      <div class="mx-auto mt-14 max-w-7xl border-t border-white/15 px-5 pt-6 text-sm text-white/50 lg:px-8">
+        <p>Consejo: antes de publicar, añade información local confirmada sobre ubicación exacta, transporte, tarifas y contacto turístico.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#101314] px-5 py-8 text-white/50">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 text-xs sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-semibold tracking-[.2em] text-white/80">MACHACAMARCA · BOLIVIA</p>
+      <p>Una invitación a descubrir, aprender y cuidar.</p>
+      <a href="#inicio" class="text-orange-200 hover:text-white">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.classList.toggle('hidden', isOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>

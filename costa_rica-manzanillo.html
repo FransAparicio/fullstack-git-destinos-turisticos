@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Manzanillo Costa Rica | Paraíso Caribeño</title>
+    <meta
+      name="description"
+      content="Descubre las playas, la naturaleza y las experiencias de Manzanillo, Costa Rica."
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              tropical: "#123C35",
+              arena: "#E7BD7A",
+              bosque: "#DDE9D9",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-stone-50 text-gray-800 font-sans">
+    <!-- Navegación -->
+    <header class="absolute top-0 left-0 w-full z-20">
+      <nav
+        class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between text-white"
+      >
+        <a
+          href="#inicio"
+          class="text-xl md:text-2xl font-extrabold tracking-widest"
+        >
+          MANZANILLO<span class="text-arena">.</span>
+        </a>
+
+        <div class="hidden md:flex gap-8 items-center text-sm font-medium">
+          <a href="#destino" class="hover:text-arena transition">Destino</a>
+          <a href="#experiencias" class="hover:text-arena transition"
+            >Experiencias</a
+          >
+          <a href="#galeria" class="hover:text-arena transition">Galería</a>
+          <a
+            href="#contacto"
+            class="bg-white text-tropical px-5 py-3 rounded-full hover:bg-arena transition"
+          >
+            Planifica tu visita
+          </a>
+        </div>
+
+        <button
+          id="menuBtn"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          class="md:hidden text-3xl"
+        >
+          ☰
+        </button>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden md:hidden bg-tropical/95 text-white px-6 pb-6 space-y-4"
+      >
+        <a href="#destino" class="block">Destino</a>
+        <a href="#experiencias" class="block">Experiencias</a>
+        <a href="#galeria" class="block">Galería</a>
+        <a href="#contacto" class="block">Contacto</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Portada -->
+      <section
+        id="inicio"
+        class="relative min-h-screen flex items-center bg-tropical"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=85"
+          alt="Mar tropical de aguas turquesas"
+          class="absolute inset-0 w-full h-full object-cover opacity-65"
+        />
+
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent"
+        ></div>
+
+        <div class="relative max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
+          <p
+            class="text-arena uppercase tracking-[0.3em] text-sm font-semibold mb-6"
+          >
+            Caribe Sur · Costa Rica
+          </p>
+
+          <h1
+            class="text-5xl sm:text-6xl md:text-8xl font-extrabold text-white max-w-4xl leading-tight"
+          >
+            Un paraíso<br />
+            <span class="text-arena">por descubrir.</span>
+          </h1>
+
+          <p
+            class="text-white/90 text-lg md:text-xl max-w-xl mt-7 leading-relaxed"
+          >
+            Playas escondidas, selva tropical y la magia del Caribe
+            costarricense te esperan en Manzanillo.
+          </p>
+
+          <div class="flex flex-wrap gap-4 mt-9">
+            <a
+              href="#destino"
+              class="bg-arena text-tropical font-bold px-7 py-4 rounded-full hover:bg-white transition"
+            >
+              Explorar destino ↗
+            </a>
+
+            <a
+              href="#galeria"
+              class="border border-white/70 text-white px-7 py-4 rounded-full hover:bg-white hover:text-tropical transition"
+            >
+              Ver fotografías
+            </a>
+          </div>
+
+          <p class="text-white/70 text-sm mt-16">
+            Talamanca, Limón · Pura vida junto al mar
+          </p>
+        </div>
+      </section>
+
+      <!-- Introducción -->
+      <section id="destino" class="py-20 md:py-28 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p
+              class="text-emerald-800 uppercase tracking-[0.2em] text-sm font-bold mb-4"
+            >
+              La esencia del Caribe
+            </p>
+
+            <h2
+              class="text-4xl md:text-5xl font-bold text-tropical leading-tight"
+            >
+              Naturaleza que<br />enamora.
+            </h2>
+
+            <p class="mt-6 text-gray-600 leading-8">
+              Manzanillo es un rincón especial de la costa caribeña de Costa
+              Rica, donde la vegetación tropical, las playas y la cultura local
+              crean una experiencia auténtica.
+            </p>
+
+            <p class="mt-4 text-gray-600 leading-8">
+              Explora el Refugio Nacional de Vida Silvestre Gandoca-Manzanillo y
+              disfruta de un destino ideal para quienes buscan aventura,
+              tranquilidad y paisajes inolvidables.
+            </p>
+
+            <a
+              href="https://www.sinac.go.cr/ES/ac/aclac/rnvsgm/Paginas/default.aspx"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block mt-7 text-emerald-800 font-bold border-b-2 border-arena pb-1"
+            >
+              Conoce el refugio natural ↗
+            </a>
+          </div>
+
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1000&q=85"
+              alt="Paisaje de playa tropical"
+              loading="lazy"
+              class="w-full h-[430px] object-cover rounded-3xl shadow-xl"
+            />
+            <div
+              class="absolute -bottom-5 -left-3 md:-left-7 bg-white p-5 md:p-6 rounded-2xl shadow-lg"
+            >
+              <p class="text-3xl font-extrabold text-tropical">100%</p>
+              <p class="text-gray-500 text-sm">Espíritu caribeño</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experiencias -->
+      <section id="experiencias" class="bg-bosque py-20 md:py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <p
+              class="text-emerald-800 uppercase tracking-[0.2em] text-sm font-bold"
+            >
+              Vive la experiencia
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold text-tropical mt-4">
+              Hay mucho por explorar
+            </h2>
+            <p class="text-gray-600 mt-5 leading-7">
+              Descubre rincones naturales y actividades para disfrutar el Caribe
+              a tu propio ritmo.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            <article
+              class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80"
+                alt="Playa de arena junto al mar"
+                loading="lazy"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-6">
+                <span class="text-emerald-700 text-sm font-semibold"
+                  >01 · RELAX</span
+                >
+                <h3 class="text-xl font-bold text-tropical mt-2">
+                  Playas paradisíacas
+                </h3>
+                <p class="text-gray-600 mt-3 leading-7">
+                  Camina por la costa, contempla el paisaje y disfruta de la
+                  tranquilidad del mar Caribe.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80"
+                alt="Bosque tropical frondoso"
+                loading="lazy"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-6">
+                <span class="text-emerald-700 text-sm font-semibold"
+                  >02 · AVENTURA</span
+                >
+                <h3 class="text-xl font-bold text-tropical mt-2">
+                  Senderos naturales
+                </h3>
+                <p class="text-gray-600 mt-3 leading-7">
+                  Explora la vegetación tropical y observa la riqueza de los
+                  ecosistemas del refugio.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80"
+                alt="Fauna en un entorno natural"
+                loading="lazy"
+                class="w-full h-60 object-cover"
+              />
+              <div class="p-6">
+                <span class="text-emerald-700 text-sm font-semibold"
+                  >03 · VIDA SILVESTRE</span
+                >
+                <h3 class="text-xl font-bold text-tropical mt-2">
+                  Encuentros con la naturaleza
+                </h3>
+                <p class="text-gray-600 mt-3 leading-7">
+                  Descubre aves, plantas y animales en su entorno natural,
+                  siempre con respeto por la fauna.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Galería -->
+      <section id="galeria" class="py-20 md:py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-10">
+            <p
+              class="text-emerald-800 uppercase tracking-[0.2em] text-sm font-bold"
+            >
+              Postales del paraíso
+            </p>
+            <h2 class="text-4xl md:text-5xl font-bold text-tropical mt-3">
+              Inspírate para viajar
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img
+              src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=700&q=80"
+              alt="Costa tropical"
+              loading="lazy"
+              class="w-full h-52 md:h-72 object-cover rounded-2xl hover:scale-[1.02] transition"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=80"
+              alt="Olas del océano"
+              loading="lazy"
+              class="w-full h-52 md:h-72 object-cover rounded-2xl hover:scale-[1.02] transition"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=700&q=80"
+              alt="Bosque verde"
+              loading="lazy"
+              class="w-full h-52 md:h-72 object-cover rounded-2xl hover:scale-[1.02] transition"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=700&q=80"
+              alt="Paisaje natural"
+              loading="lazy"
+              class="w-full h-52 md:h-72 object-cover rounded-2xl hover:scale-[1.02] transition"
+            />
+          </div>
+
+          <p class="text-gray-500 text-sm mt-4">
+            Fotografías ilustrativas de paisajes tropicales. No todas
+            representan ubicaciones específicas de Manzanillo.
+          </p>
+        </div>
+      </section>
+
+      <!-- Llamada a la acción -->
+      <section id="contacto" class="px-6 pb-20">
+        <div
+          class="max-w-7xl mx-auto relative overflow-hidden rounded-3xl bg-tropical px-7 py-16 md:p-20 text-center"
+        >
+          <div
+            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=70')] bg-cover bg-center"
+          ></div>
+
+          <div class="relative">
+            <p
+              class="text-arena uppercase tracking-[0.2em] font-semibold text-sm"
+            >
+              Tu próxima aventura comienza aquí
+            </p>
+
+            <h2 class="text-4xl md:text-6xl font-extrabold text-white mt-5">
+              El Caribe te espera.
+            </h2>
+
+            <p class="text-white/80 max-w-xl mx-auto mt-5 leading-7">
+              Prepara tu visita, descubre la cultura local y vive momentos
+              inolvidables en Manzanillo.
+            </p>
+
+            <a
+              href="https://www.visitcostarica.com/where-to-go/protected-areas/gandoca-manzanillo-natural-wildlife-refuge"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block mt-8 bg-arena text-tropical px-8 py-4 rounded-full font-bold hover:bg-white transition"
+            >
+              Planificar mi visita ↗
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-[#0b2c27] text-white px-6 py-9">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row gap-4 justify-between items-center"
+      >
+        <a href="#inicio" class="font-extrabold tracking-widest text-lg">
+          MANZANILLO<span class="text-arena">.</span>
+        </a>
+        <p class="text-white/60 text-sm text-center">
+          Descubre, disfruta y protege el Caribe costarricense.
+        </p>
+        <p class="text-white/60 text-sm">
+          © <span id="year"></span> Manzanillo Costa Rica
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      menuBtn.addEventListener("click", () => {
+        const isHidden = mobileMenu.classList.toggle("hidden");
+        menuBtn.setAttribute("aria-expanded", String(!isHidden));
+        menuBtn.textContent = isHidden ? "☰" : "✕";
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          menuBtn.textContent = "☰";
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

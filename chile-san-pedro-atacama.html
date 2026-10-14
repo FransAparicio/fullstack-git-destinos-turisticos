@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubre San Pedro de Atacama: desiertos, salares, lagunas altiplánicas y cielos inolvidables en el norte de Chile." />
+  <title>San Pedro de Atacama | Un viaje a otro mundo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+            display: ['Playfair Display', 'serif']
+          },
+          colors: {
+            sand: '#F5F0E7',
+            clay: '#B96E4B',
+            ink: '#24221F',
+            sage: '#7A8270'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-shade { background: linear-gradient(90deg, rgba(18,18,16,.68) 0%, rgba(18,18,16,.30) 52%, rgba(18,18,16,.06) 100%); }
+    .image-zoom { transition: transform .7s ease; }
+    .image-card:hover .image-zoom { transform: scale(1.06); }
+  </style>
+</head>
+<body class="bg-sand text-ink antialiased">
+  <!-- Navegación -->
+  <header class="absolute inset-x-0 top-0 z-20 text-white">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
+      <a href="#" class="flex items-center gap-3" aria-label="San Pedro de Atacama, inicio">
+        <span class="grid h-10 w-10 place-items-center rounded-full border border-white/50 text-lg">✳</span>
+        <span class="leading-tight"><span class="block text-sm font-bold tracking-[.18em]">SAN PEDRO</span><span class="text-[10px] tracking-[.28em] text-white/75">DE ATACAMA · CHILE</span></span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium md:flex">
+        <a class="transition hover:text-orange-200" href="#experiencias">Experiencias</a>
+        <a class="transition hover:text-orange-200" href="#lugares">Lugares</a>
+        <a class="transition hover:text-orange-200" href="#consejos">Planifica tu viaje</a>
+      </div>
+      <a href="#lugares" class="rounded-full border border-white/70 px-5 py-2.5 text-sm transition hover:bg-white hover:text-ink">Explorar destino ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section class="relative flex min-h-[88vh] items-end overflow-hidden bg-stone-700 md:min-h-[780px]">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=90" alt="Paisaje árido y montañoso bajo la luz cálida del atardecer" class="absolute inset-0 h-full w-full object-cover" />
+      <div class="hero-shade absolute inset-0"></div>
+      <div class="relative z-10 mx-auto w-full max-w-7xl px-5 pb-20 pt-36 text-white md:px-8 md:pb-28">
+        <p class="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.28em] text-orange-100"><span class="h-px w-10 bg-orange-200"></span> Norte de Chile · Región de Antofagasta</p>
+        <h1 class="max-w-4xl font-display text-5xl leading-[1.05] md:text-7xl lg:text-8xl">Un viaje a<br><span class="italic text-orange-200">otro mundo.</span></h1>
+        <p class="mt-7 max-w-xl text-base leading-7 text-white/85 md:text-lg">Donde el desierto se encuentra con el cielo, las montañas cambian de color y cada atardecer parece una obra de arte.</p>
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#lugares" class="rounded-full bg-orange-200 px-7 py-3.5 text-sm font-bold text-ink transition hover:bg-white">Descubre Atacama <span class="ml-2">↗</span></a>
+          <a href="#experiencias" class="rounded-full border border-white/60 px-7 py-3.5 text-sm font-semibold transition hover:bg-white/10">Ver experiencias</a>
+        </div>
+        <div class="mt-16 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/30 pt-5 text-xs tracking-wide text-white/80">
+          <span>◉ Paisajes extraordinarios</span><span>✦ Cielos estrellados</span><span>⌁ Cultura ancestral</span>
+        </div>
+      </div>
+      <div class="absolute bottom-9 right-8 hidden rotate-90 text-[10px] tracking-[.3em] text-white/70 md:block">DESCUBRE · EXPLORA · CONECTA</div>
+    </section>
+
+    <!-- Introducción -->
+    <section class="mx-auto grid max-w-7xl gap-10 px-5 py-20 md:grid-cols-12 md:items-center md:px-8 md:py-28">
+      <div class="md:col-span-5">
+        <p class="mb-4 text-xs font-bold uppercase tracking-[.25em] text-clay">El corazón del desierto</p>
+        <h2 class="font-display text-4xl leading-tight md:text-5xl">La naturaleza en su versión más <span class="italic text-clay">extraordinaria.</span></h2>
+      </div>
+      <div class="md:col-span-6 md:col-start-7">
+        <p class="text-base leading-8 text-stone-600">San Pedro de Atacama es un pueblo oasis rodeado por algunos de los paisajes más sorprendentes de Chile. Aquí puedes caminar entre formaciones de roca, descubrir lagunas de tonos intensos y contemplar uno de los cielos más fascinantes del planeta.</p>
+        <a href="#consejos" class="mt-6 inline-flex items-center gap-3 border-b border-clay pb-2 text-sm font-bold text-clay">Prepara tu aventura <span>→</span></a>
+      </div>
+    </section>
+
+    <!-- Lugares -->
+    <section id="lugares" class="bg-white py-20 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div><p class="mb-3 text-xs font-bold uppercase tracking-[.25em] text-clay">Lugares imperdibles</p><h2 class="font-display text-4xl md:text-5xl">Paisajes que no se olvidan</h2></div>
+          <p class="max-w-md text-sm leading-6 text-stone-500">Desde valles esculpidos por el tiempo hasta lagunas escondidas entre volcanes.</p>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="image-card group overflow-hidden rounded-2xl bg-sand">
+            <div class="relative h-72 overflow-hidden"><img class="image-zoom h-full w-full object-cover" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Montañas escarpadas bajo un cielo despejado" loading="lazy"><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider">Aventura</span></div>
+            <div class="p-6"><h3 class="font-display text-2xl">Valle de la Luna</h3><p class="mt-2 text-sm leading-6 text-stone-600">Dunas, crestas y formaciones rocosas que parecen sacadas de otro planeta. Ideal para disfrutar la puesta de sol.</p><a href="#consejos" class="mt-5 inline-flex text-sm font-bold text-clay">Conocer más <span class="ml-2">↗</span></a></div>
+          </article>
+          <article class="image-card group overflow-hidden rounded-2xl bg-sand">
+            <div class="relative h-72 overflow-hidden"><img class="image-zoom h-full w-full object-cover" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1000&q=85" alt="Laguna de montaña rodeada de paisajes naturales" loading="lazy"><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider">Naturaleza</span></div>
+            <div class="p-6"><h3 class="font-display text-2xl">Lagunas altiplánicas</h3><p class="mt-2 text-sm leading-6 text-stone-600">Aguas de colores intensos, volcanes en el horizonte y una tranquilidad que invita a detenerse y contemplar.</p><a href="#consejos" class="mt-5 inline-flex text-sm font-bold text-clay">Conocer más <span class="ml-2">↗</span></a></div>
+          </article>
+          <article class="image-card group overflow-hidden rounded-2xl bg-sand">
+            <div class="relative h-72 overflow-hidden"><img class="image-zoom h-full w-full object-cover" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1000&q=85" alt="Paisaje natural en tonos cálidos al atardecer" loading="lazy"><span class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider">Atardecer</span></div>
+            <div class="p-6"><h3 class="font-display text-2xl">Valle de la Muerte</h3><p class="mt-2 text-sm leading-6 text-stone-600">Un paisaje árido de grandes pendientes y arena, perfecto para admirar los contrastes del desierto.</p><a href="#consejos" class="mt-5 inline-flex text-sm font-bold text-clay">Conocer más <span class="ml-2">↗</span></a></div>
+          </article>
+        </div>
+        <p class="mt-5 text-xs text-stone-400">Nota: las fotografías son ilustrativas y pueden no corresponder exactamente a cada lugar mencionado.</p>
+      </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section id="experiencias" class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-24">
+      <div class="grid gap-12 md:grid-cols-2 md:items-center">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=90" alt="Cielo nocturno lleno de estrellas sobre montañas" class="h-[420px] w-full rounded-2xl object-cover md:h-[550px]" loading="lazy">
+          <div class="absolute -bottom-5 right-4 max-w-[230px] rounded-xl bg-white p-5 shadow-lg md:-right-5"><p class="font-display text-2xl">Mira hacia arriba.</p><p class="mt-1 text-xs leading-5 text-stone-500">El cielo nocturno también es parte del viaje.</p></div>
+        </div>
+        <div class="md:pl-8">
+          <p class="mb-4 text-xs font-bold uppercase tracking-[.25em] text-clay">Vive la experiencia</p>
+          <h2 class="font-display text-4xl leading-tight md:text-5xl">Más que un destino, una sensación.</h2>
+          <div class="mt-8 space-y-6">
+            <div class="flex gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-xl">☼</span><div><h3 class="font-bold">Atardeceres de otro color</h3><p class="mt-1 text-sm leading-6 text-stone-600">Observa cómo el sol transforma las montañas en tonos cobrizos, dorados y violetas.</p></div></div>
+            <div class="flex gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-xl">✧</span><div><h3 class="font-bold">Observación astronómica</h3><p class="mt-1 text-sm leading-6 text-stone-600">Descubre constelaciones y planetas en noches de cielo despejado, lejos de las grandes ciudades.</p></div></div>
+            <div class="flex gap-4"><span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-xl">⌁</span><div><h3 class="font-bold">Cultura y sabores locales</h3><p class="mt-1 text-sm leading-6 text-stone-600">Recorre el pueblo, conoce sus tradiciones y disfruta la gastronomía del norte de Chile.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consejos -->
+    <section id="consejos" class="bg-[#292923] py-20 text-white md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="max-w-2xl"><p class="mb-3 text-xs font-bold uppercase tracking-[.25em] text-orange-200">Antes de viajar</p><h2 class="font-display text-4xl md:text-5xl">Unos consejos para disfrutar al máximo.</h2><p class="mt-5 leading-7 text-white/65">El desierto es hermoso, pero también exige preparación. Viaja con calma y respeta este entorno único.</p></div>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-xl border border-white/15 p-5"><span class="text-2xl">☀</span><h3 class="mt-4 font-bold">Protección solar</h3><p class="mt-2 text-sm leading-6 text-white/60">Lleva bloqueador, lentes de sol, sombrero y ropa ligera.</p></div>
+          <div class="rounded-xl border border-white/15 p-5"><span class="text-2xl">◌</span><h3 class="mt-4 font-bold">Hidratación</h3><p class="mt-2 text-sm leading-6 text-white/60">Bebe agua con frecuencia y considera la altura en excursiones.</p></div>
+          <div class="rounded-xl border border-white/15 p-5"><span class="text-2xl">⌁</span><h3 class="mt-4 font-bold">Ropa por capas</h3><p class="mt-2 text-sm leading-6 text-white/60">Los días pueden ser cálidos y las noches bastante frías.</p></div>
+          <div class="rounded-xl border border-white/15 p-5"><span class="text-2xl">♧</span><h3 class="mt-4 font-bold">Viaja responsable</h3><p class="mt-2 text-sm leading-6 text-white/60">Sigue senderos señalizados y no dejes residuos en la naturaleza.</p></div>
+        </div>
+        <div class="mt-12 flex flex-col justify-between gap-6 rounded-2xl bg-orange-200 p-7 text-ink md:flex-row md:items-center md:p-10">
+          <div><p class="text-xs font-bold uppercase tracking-[.2em]">Tu próxima aventura comienza aquí</p><h3 class="mt-2 font-display text-3xl md:text-4xl">El desierto te está esperando.</h3></div>
+          <a href="https://www.chile.travel/" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center justify-center rounded-full bg-ink px-6 py-3.5 text-sm font-bold text-white transition hover:bg-stone-700">Explorar Chile Travel ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-sand">
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 text-sm text-stone-500 md:flex-row md:items-center md:justify-between md:px-8">
+      <a href="#" class="font-bold tracking-[.16em] text-ink">SAN PEDRO <span class="font-normal text-stone-400">/ ATACAMA</span></a>
+      <p>Un destino extraordinario en el norte de Chile.</p>
+      <p class="text-xs">Sitio demostrativo · Imágenes desde Unsplash</p>
+    </div>
+  </footer>
+</body>
+</html>

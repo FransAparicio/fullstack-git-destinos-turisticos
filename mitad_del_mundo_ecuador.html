@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre la Ciudad Mitad del Mundo, un destino emblemático al norte de Quito, Ecuador.">
+    <meta name="theme-color" content="#123b35">
+    <title>Mitad del Mundo | Quito, Ecuador</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --ink: #17332e;
+            --muted: #64736b;
+            --green: #17483e;
+            --lime: #d5eb75;
+            --paper: #f7f6f0;
+            --white: #fff;
+            --serif: Georgia, "Times New Roman", serif;
+            font-family: "Segoe UI", Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        * { box-sizing: border-box; }
+        body { margin: 0; color: var(--ink); background: var(--paper); }
+        a { color: inherit; }
+        img { display: block; max-width: 100%; }
+        .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+
+        .topbar {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: var(--white);
+            border-bottom: 1px solid rgb(255 255 255 / 22%);
+        }
+        .nav {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            color: inherit;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 750;
+            letter-spacing: .04em;
+        }
+        .brand-mark {
+            display: grid;
+            width: 38px;
+            aspect-ratio: 1;
+            place-items: center;
+            border: 1px solid rgb(255 255 255 / 70%);
+            border-radius: 50%;
+            font-family: var(--serif);
+            font-size: 19px;
+        }
+        .nav-links { display: flex; align-items: center; gap: 28px; }
+        .nav-links a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .nav-links a:hover { color: var(--lime); }
+
+        .hero {
+            position: relative;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            color: var(--white);
+            background: #18352f;
+        }
+        .hero::after {
+            position: absolute;
+            inset: 0;
+            content: "";
+            background: linear-gradient(90deg, rgb(9 28 25 / 79%) 0%, rgb(9 28 25 / 52%) 48%, rgb(9 28 25 / 10%) 100%),
+                        linear-gradient(0deg, rgb(9 28 25 / 34%), transparent 45%);
+        }
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 52%;
+        }
+        .hero-content { position: relative; z-index: 1; padding: 130px 0 90px; }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin: 0 0 23px;
+            color: var(--lime);
+            font-size: 12px;
+            font-weight: 750;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        .eyebrow::before { width: 26px; height: 1px; content: ""; background: currentColor; }
+        h1, h2, h3, p { margin-top: 0; }
+        h1 {
+            max-width: 740px;
+            margin-bottom: 22px;
+            font: 500 clamp(3.4rem, 8vw, 6.6rem)/.98 var(--serif);
+            letter-spacing: -.055em;
+        }
+        h1 span { color: var(--lime); font-style: italic; }
+        .hero-copy { max-width: 510px; margin-bottom: 32px; color: rgb(255 255 255 / 85%); font-size: 17px; line-height: 1.75; }
+        .button {
+            display: inline-flex;
+            min-height: 49px;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 0 21px;
+            border: 1px solid var(--lime);
+            border-radius: 3px;
+            background: var(--lime);
+            color: var(--ink);
+            font-size: 13px;
+            font-weight: 750;
+            text-decoration: none;
+            transition: transform .2s ease, background .2s ease;
+        }
+        .button:hover { transform: translateY(-2px); background: #e2f58e; }
+        .button svg { width: 16px; height: 16px; }
+        .hero-note {
+            position: absolute;
+            z-index: 1;
+            right: max(24px, calc((100vw - 1160px) / 2));
+            bottom: 34px;
+            color: rgb(255 255 255 / 82%);
+            font-size: 11px;
+        }
+        .hero-note a { text-underline-offset: 3px; }
+
+        .intro { padding: 92px 0 96px; }
+        .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+        .section-label {
+            margin-bottom: 18px;
+            color: #668340;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+        h2 { margin-bottom: 20px; font: 500 clamp(2.25rem, 4vw, 3.4rem)/1.1 var(--serif); letter-spacing: -.04em; }
+        .intro-copy { max-width: 515px; color: var(--muted); font-size: 15px; line-height: 1.85; }
+        .intro-copy p:last-child { margin-bottom: 0; }
+        .fact-card {
+            position: relative;
+            padding: 35px 38px 32px;
+            background: #e9ecdf;
+        }
+        .fact-card::before {
+            position: absolute;
+            top: 0;
+            left: 38px;
+            width: 44px;
+            height: 3px;
+            content: "";
+            background: #b0c755;
+        }
+        .fact-card h3 { margin: 10px 0 8px; font: 500 26px var(--serif); }
+        .fact-card p { margin-bottom: 22px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+        .fact-row { display: flex; justify-content: space-between; gap: 18px; padding: 13px 0; border-top: 1px solid #d4d9c8; font-size: 12px; }
+        .fact-row strong { font-weight: 700; }
+        .fact-row span { color: var(--muted); text-align: right; }
+
+        .gallery-section { padding: 83px 0 95px; background: var(--white); }
+        .gallery-heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+        .gallery-heading h2 { max-width: 510px; margin-bottom: 0; }
+        .gallery-heading p { max-width: 330px; margin-bottom: 4px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+        .gallery { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 18px; }
+        .photo { margin: 0; overflow: hidden; background: var(--paper); }
+        .photo img { width: 100%; height: 285px; object-fit: cover; transition: transform .4s ease; }
+        .photo:hover img { transform: scale(1.035); }
+        .photo figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 13px 14px 15px; font-size: 12px; font-weight: 700; }
+        .photo figcaption a { color: var(--muted); font-size: 10px; font-weight: 500; }
+
+        .visit { padding: 86px 0 92px; }
+        .visit-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
+        .visit-copy > p:not(.section-label) { max-width: 420px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+        .visit-info { border-top: 1px solid #d9ddd2; }
+        .visit-row { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 19px 0; border-bottom: 1px solid #d9ddd2; }
+        .visit-row strong { font-size: 13px; }
+        .visit-row span { color: var(--muted); font-size: 13px; line-height: 1.6; }
+        .visit-row a { text-underline-offset: 3px; }
+        .visit .button { margin-top: 26px; background: var(--green); border-color: var(--green); color: var(--white); }
+        .visit .button:hover { background: #236456; }
+
+        footer { padding: 24px 0; background: var(--green); color: rgb(255 255 255 / 78%); }
+        .footer-inner { display: flex; justify-content: space-between; gap: 20px; font-size: 11px; }
+        footer a { color: inherit; text-underline-offset: 3px; }
+
+        @media (max-width: 760px) {
+            .wrap { width: min(100% - 36px, 560px); }
+            .nav { min-height: 70px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 11px; }
+            .nav-links a:last-child { display: none; }
+            .hero { min-height: 620px; }
+            .hero::after { background: linear-gradient(90deg, rgb(9 28 25 / 77%), rgb(9 28 25 / 32%)), linear-gradient(0deg, rgb(9 28 25 / 36%), transparent 55%); }
+            .hero-content { padding: 120px 0 100px; }
+            .hero-note { right: 18px; bottom: 18px; }
+            .intro, .gallery-section, .visit { padding: 65px 0; }
+            .intro-grid, .visit-grid { grid-template-columns: 1fr; gap: 35px; }
+            .gallery-heading { display: block; }
+            .gallery-heading p { margin-top: 15px; }
+            .gallery { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .photo:first-child { grid-column: 1 / -1; }
+            .photo img { height: 210px; }
+            .photo:first-child img { height: 270px; }
+            .visit-grid { gap: 25px; }
+        }
+        @media (max-width: 430px) {
+            .nav-links { gap: 11px; }
+            .nav-links a { font-size: 10px; }
+            .brand { gap: 8px; font-size: 12px; }
+            .brand-mark { width: 33px; }
+            h1 { font-size: 3.45rem; }
+            .gallery { grid-template-columns: 1fr; }
+            .photo:first-child { grid-column: auto; }
+            .photo img, .photo:first-child img { height: 240px; }
+            .visit-row { grid-template-columns: 112px 1fr; gap: 12px; }
+            .footer-inner { flex-direction: column; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <nav class="nav wrap" aria-label="Navegación principal">
+            <a class="brand" href="#inicio" aria-label="Mitad del Mundo, inicio">
+                <span class="brand-mark" aria-hidden="true">0°</span>
+                <span>QUITO · ECUADOR</span>
+            </a>
+            <div class="nav-links">
+                <a href="#descubre">Descubre</a>
+                <a href="#galeria">Galería</a>
+                <a href="#visita">Planifica tu visita</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio" aria-labelledby="hero-title">
+            <img class="hero-image"
+                 src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Mitad_del_Mundo%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_02.JPG/1920px-Mitad_del_Mundo%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_02.JPG"
+                 alt="Monumento de la Mitad del Mundo en San Antonio de Pichincha"
+                 fetchpriority="high">
+            <div class="hero-content wrap">
+                <p class="eyebrow">San Antonio de Pichincha · Ecuador</p>
+                <h1 id="hero-title">Un pie en cada <span>hemisferio.</span></h1>
+                <p class="hero-copy">Cruza la línea ecuatorial y descubre uno de los lugares más emblemáticos de Quito: historia, cultura y curiosidades en un mismo destino.</p>
+                <a class="button" href="#descubre">
+                    Explora el destino
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+            <small class="hero-note">Foto: <a href="https://commons.wikimedia.org/wiki/File:Mitad_del_Mundo,_Quito,_Ecuador,_2015-07-22,_DD_02.JPG" target="_blank" rel="noreferrer">Diego Delso / Wikimedia Commons</a> · CC BY-SA 4.0</small>
+        </section>
+
+        <section class="intro" id="descubre" aria-labelledby="intro-title">
+            <div class="intro-grid wrap">
+                <div class="intro-copy">
+                    <p class="section-label">Una experiencia en la línea ecuatorial</p>
+                    <h2 id="intro-title">El centro del mundo, a un paso de Quito.</h2>
+                    <p>La Ciudad Mitad del Mundo es un complejo turístico y cultural situado en la parroquia de San Antonio de Pichincha, al norte de Quito. Su monumento y la línea ecuatorial invitan a conocer de cerca la historia de las expediciones que buscaron medir y señalar este punto del planeta.</p>
+                    <p>Recorre sus espacios, visita sus museos y llévate la clásica fotografía con un pie a cada lado de la línea que divide los hemisferios norte y sur.</p>
+                </div>
+                <aside class="fact-card" aria-label="Datos del destino">
+                    <p class="section-label">Antes de ir</p>
+                    <h3>Un destino para explorar sin apuro.</h3>
+                    <p>Reserva unas horas para recorrer el monumento, sus exposiciones y los espacios culturales del complejo.</p>
+                    <div class="fact-row"><strong>Ubicación</strong><span>San Antonio de Pichincha, Quito</span></div>
+                    <div class="fact-row"><strong>Imperdible</strong><span>La línea ecuatorial y el monumento</span></div>
+                    <div class="fact-row"><strong>Ideal para</strong><span>Familias, cultura y fotografía</span></div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="galeria" aria-labelledby="gallery-title">
+            <div class="wrap">
+                <div class="gallery-heading">
+                    <div>
+                        <p class="section-label">Postales del destino</p>
+                        <h2 id="gallery-title">Un lugar para mirar, aprender y recordar.</h2>
+                    </div>
+                    <p>Conoce el monumento y algunos de los espacios que hacen de esta visita una experiencia especial.</p>
+                </div>
+                <div class="gallery">
+                    <figure class="photo">
+                        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Ciudad_Mitad_del_Mundo_2014.jpg/960px-Ciudad_Mitad_del_Mundo_2014.jpg"
+                             alt="Vista de la Ciudad Mitad del Mundo y su monumento" loading="lazy">
+                        <figcaption>
+                            <span>La Ciudad Mitad del Mundo</span>
+                            <a href="https://commons.wikimedia.org/wiki/File:Ciudad_Mitad_del_Mundo_2014.jpg" target="_blank" rel="noreferrer">Foto: Medios Públicos EP · CC BY-SA 2.0</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="photo">
+                        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Museo_de_la_Ciudad_Mitad_del_Mundo.jpg/960px-Museo_de_la_Ciudad_Mitad_del_Mundo.jpg"
+                             alt="Espacio del museo interactivo de la Ciudad Mitad del Mundo" loading="lazy">
+                        <figcaption>
+                            <span>Museo interactivo</span>
+                            <a href="https://commons.wikimedia.org/wiki/File:Museo_de_la_Ciudad_Mitad_del_Mundo.jpg" target="_blank" rel="noreferrer">Foto: Medios Públicos EP · CC BY-SA 2.0</a>
+                        </figcaption>
+                    </figure>
+                    <figure class="photo">
+                        <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Mitad_del_Mundo%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_02.JPG/960px-Mitad_del_Mundo%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_02.JPG"
+                             alt="Detalle del monumento de la Mitad del Mundo" loading="lazy">
+                        <figcaption>
+                            <span>El monumento</span>
+                            <a href="https://commons.wikimedia.org/wiki/File:Mitad_del_Mundo,_Quito,_Ecuador,_2015-07-22,_DD_02.JPG" target="_blank" rel="noreferrer">Foto: Diego Delso · CC BY-SA 4.0</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="visit" id="visita" aria-labelledby="visit-title">
+            <div class="visit-grid wrap">
+                <div class="visit-copy">
+                    <p class="section-label">Organiza tu recorrido</p>
+                    <h2 id="visit-title">Tu próxima parada al norte de Quito.</h2>
+                    <p>La Ciudad Mitad del Mundo se encuentra al norte de la capital ecuatoriana. Revisa la información oficial antes de salir para consultar horarios, tarifas y actividades disponibles.</p>
+                    <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=Ciudad+Mitad+del+Mundo+Quito+Ecuador" target="_blank" rel="noreferrer">
+                        Ver ubicación en el mapa
+                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.3" stroke="currentColor" stroke-width="1.8"/></svg>
+                    </a>
+                </div>
+                <div class="visit-info" aria-label="Información para la visita">
+                    <div class="visit-row"><strong>Cómo llegar</strong><span>Desde Quito, dirígete hacia San Antonio de Pichincha. Consulta la ruta y el transporte disponible antes de viajar.</span></div>
+                    <div class="visit-row"><strong>Horarios y tarifas</strong><span>Pueden cambiar. Confirma los datos vigentes con la <a href="https://www.mitaddelmundo.gob.ec/" target="_blank" rel="noreferrer">Ciudad Mitad del Mundo</a> antes de tu visita.</span></div>
+                    <div class="visit-row"><strong>Recomendación</strong><span>Lleva protección solar y calzado cómodo para disfrutar el recorrido al aire libre.</span></div>
+                    <div class="visit-row"><strong>Tiempo sugerido</strong><span>Reserva varias horas para conocer el monumento y explorar el complejo con calma.</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner wrap">
+            <span>Mitad del Mundo · Quito, Ecuador</span>
+            <span>Imágenes: <a href="https://commons.wikimedia.org/" target="_blank" rel="noreferrer">Wikimedia Commons</a> · Créditos y licencias en cada foto</span>
+        </div>
+    </footer>
+</body>
+</html>
