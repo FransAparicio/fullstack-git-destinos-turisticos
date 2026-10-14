@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre el Salar de Uyuni, Potosí, Bolivia: paisajes infinitos, efecto espejo, Isla Incahuasi y consejos para tu aventura.">
+  <title>Salar de Uyuni | Donde el cielo toca la tierra</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            salt: '#f7f8fa',
+            ink: '#12202b',
+            skydeep: '#0b496b',
+            turquoise: '#4fc3c7',
+            sand: '#e7d8b1'
+          },
+          fontFamily: {
+            display: ['Georgia', 'serif'],
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-bg {
+      background-image: linear-gradient(90deg, rgba(5,25,39,.72) 0%, rgba(5,25,39,.32) 52%, rgba(5,25,39,.08) 100%),
+      url('https://static.wixstatic.com/media/e047ff_19e62962262a407d830ba627ffb8a9f8~mv2.jpg/v1/fill/w_4288%2Ch_2848%2Cal_c%2Cq_90/hermosa-foto-del-salar-bajo-un-cielo-azul-brillante-en-la-isla-incahuasi-bolivia.jpg');
+      background-size: cover; background-position: center;
+    }
+    .glass { background: rgba(255,255,255,.12); backdrop-filter: blur(12px); }
+    .image-zoom { transition: transform .6s ease; }
+    .card:hover .image-zoom { transform: scale(1.06); }
+  </style>
+</head>
+<body class="bg-salt text-ink font-sans antialiased">
+  <!-- Navegación -->
+  <header class="absolute inset-x-0 top-0 z-20">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8" aria-label="Navegación principal">
+      <a href="#inicio" class="flex items-center gap-3 text-white">
+        <span class="grid h-11 w-11 place-items-center rounded-full border border-white/50 text-xl">✦</span>
+        <span class="leading-tight"><strong class="block tracking-[.18em] text-sm">UYUNI</strong><small class="text-white/75 tracking-widest">BOLIVIA · POTOSÍ</small></span>
+      </a>
+      <div class="hidden items-center gap-8 text-sm font-medium text-white md:flex">
+        <a class="hover:text-turquoise transition" href="#destino">El destino</a>
+        <a class="hover:text-turquoise transition" href="#experiencias">Experiencias</a>
+        <a class="hover:text-turquoise transition" href="#planifica">Planifica tu viaje</a>
+      </div>
+      <a href="#planifica" class="rounded-full bg-white px-5 py-3 text-sm font-semibold text-ink transition hover:bg-turquoise">Explorar Uyuni <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="hero-bg relative flex min-h-[92vh] items-end overflow-hidden text-white">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-transparent to-transparent"></div>
+      <div class="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-20 pt-36 lg:grid-cols-[1.2fr_.8fr] lg:items-end lg:px-8 lg:pb-28">
+        <div class="max-w-3xl">
+          <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-xs uppercase tracking-[.22em] glass">
+            <span class="h-2 w-2 rounded-full bg-turquoise"></span> Altiplano boliviano · 3.660 m s. n. m.
+          </p>
+          <h1 class="font-display text-5xl leading-[1.04] sm:text-6xl lg:text-8xl">Donde el cielo<br><em class="font-normal text-cyan-200">toca la tierra.</em></h1>
+          <p class="mt-7 max-w-xl text-base leading-7 text-white/85 sm:text-lg">Un horizonte infinito, reflejos que parecen irreales y la inmensidad blanca del salar más grande del mundo. Vive la magia de Uyuni, en el corazón de Bolivia.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#destino" class="rounded-full bg-white px-7 py-4 font-semibold text-ink transition hover:bg-cyan-100">Descubrir el destino <span class="ml-2">↓</span></a>
+            <a href="#experiencias" class="rounded-full border border-white/60 px-7 py-4 font-semibold text-white transition hover:bg-white/15">Ver experiencias</a>
+          </div>
+        </div>
+        <div class="hidden justify-end lg:flex">
+          <div class="glass max-w-xs rounded-2xl border border-white/20 p-5">
+            <p class="text-xs uppercase tracking-[.2em] text-cyan-100">Una maravilla natural</p>
+            <p class="mt-3 font-display text-2xl">10.582 km²</p>
+            <p class="mt-1 text-sm leading-6 text-white/75">Una inmensidad de sal que transforma el paisaje con cada estación.</p>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-7 right-8 hidden items-center gap-3 text-xs tracking-widest text-white/75 md:flex"><span class="h-px w-12 bg-white/60"></span> POTOSÍ, BOLIVIA</div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="destino" class="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.24em] text-skydeep">Un paisaje de otro mundo</p>
+          <h2 class="mt-4 max-w-xl font-display text-4xl leading-tight sm:text-5xl">La naturaleza escribió aquí su propia obra de arte.</h2>
+          <p class="mt-6 max-w-xl leading-7 text-slate-600">En el suroeste de Bolivia, el Salar de Uyuni se extiende como un océano blanco entre montañas y cielos inmensos. En época seca, la sal dibuja patrones geométricos; durante las lluvias, una fina capa de agua puede convertirlo en un espejo natural.</p>
+          <p class="mt-4 max-w-xl leading-7 text-slate-600">Más que un paisaje, es una invitación a conectar con la naturaleza, conocer las comunidades locales y descubrir la riqueza cultural del altiplano.</p>
+          <a href="#planifica" class="mt-7 inline-flex items-center gap-3 border-b border-skydeep pb-2 font-semibold text-skydeep hover:text-turquoise">Prepara tu aventura <span>→</span></a>
+        </div>
+        <div class="relative">
+          <img class="h-[420px] w-full rounded-3xl object-cover shadow-xl" src="https://static.wixstatic.com/media/nsplsh_6b705f3837744578437749~mv2_d_5182_3455_s_4_2.jpg/v1/fill/w_5182%2Ch_3455%2Cal_c%2Cq_90/Image%20by%20Samuel%20Scrimshaw.jpg" alt="Costra blanca de sal y cielo azul en el Salar de Uyuni" loading="lazy">
+          <div class="absolute -bottom-5 left-5 rounded-2xl bg-white p-5 shadow-lg sm:left-8">
+            <p class="font-display text-2xl">Un destino único</p>
+            <p class="mt-1 text-sm text-slate-500">Naturaleza · Cultura · Aventura</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencias -->
+    <section id="experiencias" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[.24em] text-skydeep">Momentos para recordar</p>
+            <h2 class="mt-4 font-display text-4xl sm:text-5xl">Vive Uyuni a tu manera.</h2>
+          </div>
+          <p class="max-w-md leading-7 text-slate-500">Cada rincón ofrece una perspectiva diferente. Lleva tu cámara, abrígate y déjate sorprender por el altiplano.</p>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="card group overflow-hidden rounded-3xl bg-salt">
+            <div class="h-64 overflow-hidden"><img class="image-zoom h-full w-full object-cover" src="https://static.wixstatic.com/media/e047ff_19e62962262a407d830ba627ffb8a9f8~mv2.jpg/v1/fill/w_4288%2Ch_2848%2Cal_c%2Cq_90/hermosa-foto-del-salar-bajo-un-cielo-azul-brillante-en-la-isla-incahuasi-bolivia.jpg" alt="Extensión blanca del Salar de Uyuni bajo un cielo azul" loading="lazy"></div>
+            <div class="p-7"><span class="text-xs font-bold uppercase tracking-[.2em] text-skydeep">01 · El clásico</span><h3 class="mt-3 font-display text-2xl">Inmensidad blanca</h3><p class="mt-3 leading-6 text-slate-600">Camina sobre el paisaje salino y juega con la perspectiva para crear fotografías inolvidables.</p></div>
+          </article>
+          <article class="card group overflow-hidden rounded-3xl bg-salt">
+            <div class="h-64 overflow-hidden"><img class="image-zoom h-full w-full object-cover" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85" alt="Reflejo de montañas y cielo sobre el agua" loading="lazy"></div>
+            <div class="p-7"><span class="text-xs font-bold uppercase tracking-[.2em] text-skydeep">02 · Efecto espejo</span><h3 class="mt-3 font-display text-2xl">El cielo bajo tus pies</h3><p class="mt-3 leading-6 text-slate-600">En temporada de lluvias, el agua puede reflejar las nubes y crear una sensación de infinito.</p></div>
+          </article>
+          <article class="card group overflow-hidden rounded-3xl bg-salt">
+            <div class="h-64 overflow-hidden"><img class="image-zoom h-full w-full object-cover" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85" alt="Montañas imponentes del paisaje andino" loading="lazy"></div>
+            <div class="p-7"><span class="text-xs font-bold uppercase tracking-[.2em] text-skydeep">03 · Altiplano</span><h3 class="mt-3 font-display text-2xl">Horizontes andinos</h3><p class="mt-3 leading-6 text-slate-600">Descubre montañas, volcanes y paisajes de altura que revelan la diversidad de esta región.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lugares imperdibles -->
+    <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+      <div class="max-w-2xl">
+        <p class="text-xs font-bold uppercase tracking-[.24em] text-skydeep">Más por descubrir</p>
+        <h2 class="mt-4 font-display text-4xl sm:text-5xl">Lugares que cuentan historias.</h2>
+      </div>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="text-2xl">🌵</span><h3 class="mt-4 text-lg font-semibold">Isla Incahuasi</h3><p class="mt-2 text-sm leading-6 text-slate-600">Formaciones rocosas y cactus gigantes en medio del salar. El acceso puede variar según las condiciones.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="text-2xl">🚂</span><h3 class="mt-4 text-lg font-semibold">Cementerio de trenes</h3><p class="mt-2 text-sm leading-6 text-slate-600">Locomotoras históricas que evocan el pasado ferroviario de Uyuni.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="text-2xl">🧂</span><h3 class="mt-4 text-lg font-semibold">Colchani</h3><p class="mt-2 text-sm leading-6 text-slate-600">Conoce la tradición local vinculada al procesamiento artesanal de la sal.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6">
+          <span class="text-2xl">🦩</span><h3 class="mt-4 text-lg font-semibold">Lagunas de colores</h3><p class="mt-2 text-sm leading-6 text-slate-600">Una extensión de viaje para contemplar lagunas altoandinas y fauna silvestre.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planificación -->
+    <section id="planifica" class="bg-ink text-white">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.24em] text-cyan-200">Antes de partir</p>
+          <h2 class="mt-4 font-display text-4xl sm:text-5xl">Tu aventura comienza con una buena planificación.</h2>
+          <p class="mt-6 max-w-xl leading-7 text-white/70">Uyuni se encuentra a gran altitud y el clima puede cambiar rápidamente. Planifica con operadores locales y confirma el estado de las rutas antes de salir.</p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6"><span class="text-2xl">🧥</span><h3 class="mt-3 font-semibold">Lleva abrigo</h3><p class="mt-2 text-sm leading-6 text-white/65">Usa capas de ropa, cortaviento y accesorios para el frío, especialmente por la noche.</p></div>
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6"><span class="text-2xl">🕶️</span><h3 class="mt-3 font-semibold">Protege tu piel</h3><p class="mt-2 text-sm leading-6 text-white/65">No olvides protector solar, lentes con protección UV y sombrero.</p></div>
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6"><span class="text-2xl">💧</span><h3 class="mt-3 font-semibold">Hidrátate</h3><p class="mt-2 text-sm leading-6 text-white/65">Bebe agua y date tiempo para adaptarte a la altura antes de realizar esfuerzos.</p></div>
+          <div class="rounded-2xl border border-white/15 bg-white/5 p-6"><span class="text-2xl">📅</span><h3 class="mt-3 font-semibold">Elige la temporada</h3><p class="mt-2 text-sm leading-6 text-white/65">Lluvias: posible efecto espejo. Época seca: patrones de sal y, generalmente, mayor acceso.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="px-5 py-20 text-center lg:py-24">
+      <p class="text-xs font-bold uppercase tracking-[.24em] text-skydeep">El corazón de Bolivia te espera</p>
+      <h2 class="mx-auto mt-4 max-w-3xl font-display text-4xl leading-tight sm:text-6xl">Hay lugares que visitas.<br><em class="font-normal">Y otros que se quedan contigo.</em></h2>
+      <p class="mx-auto mt-6 max-w-xl leading-7 text-slate-600">Descubre el Salar de Uyuni y guarda recuerdos que durarán toda la vida.</p>
+      <a href="https://boliviatravel.gob.bo/salar-de-uyuni-y-lagunade-colores/" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex rounded-full bg-skydeep px-8 py-4 font-semibold text-white transition hover:bg-cyan-800">Más información turística <span class="ml-3">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <a href="#inicio" class="font-semibold tracking-[.18em] text-ink">UYUNI · BOLIVIA</a>
+      <p>Un destino extraordinario en el departamento de Potosí.</p>
+      <a href="#inicio" class="hover:text-skydeep">Volver arriba ↑</a>
+    </div>
+  </footer>
+</body>
+</html>

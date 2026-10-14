@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Rama - Puerta al Caribe Nicaragüense</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'jungle-green': '#1b4332',
+                        'river-blue': '#0077b6',
+                        'caribbean-teal': '#00b4d8',
+                        'warm-sand': '#f4a261',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <!-- Navegación -->
+    <nav class="bg-jungle-green text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-anchor text-caribbean-teal text-2xl"></i>
+                    <span class="font-bold text-xl tracking-wider">El Rama</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#inicio" class="hover:text-caribbean-teal transition duration-200">Inicio</a>
+                        <a href="#atractivos" class="hover:text-caribbean-teal transition duration-200">Atractivos</a>
+                        <a href="#cultura" class="hover:text-caribbean-teal transition duration-200">Cultura y Gastronomía</a>
+                        <a href="#contacto" class="bg-river-blue px-4 py-2 rounded-full font-semibold hover:bg-caribbean-teal hover:text-gray-900 transition duration-300">Planifica tu Viaje</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="relative bg-cover bg-center h-[550px]" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80');">
+        <div class="max-w-7xl mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+            <span class="bg-warm-sand text-gray-900 font-semibold text-xs md:text-sm px-3 py-1 rounded-full uppercase tracking-wider mb-4">Caribe Sur • Nicaragua</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Bienvenido a El Rama</h1>
+            <p class="text-lg md:text-2xl max-w-2xl mb-8 font-light drop-shadow">La vibrante ciudad puerto fluvial, punto de encuentro entre la majestuosa selva y el deslumbrante Caribe.</p>
+            <a href="#atractivos" class="bg-caribbean-teal text-gray-900 font-bold px-8 py-3 rounded-lg shadow-lg hover:bg-river-blue hover:text-white transition duration-300 transform hover:-translate-y-1">
+                Descubrir Destinos
+            </a>
+        </div>
+    </header>
+
+    <!-- Resumen / Introducción -->
+    <section class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-jungle-green mb-4">Donde los ríos conversan con el Caribe</h2>
+            <p class="text-gray-6xl text-lg leading-relaxed">
+                Ubicada en la Región Autónoma del Caribe Sur (RACCS), Ciudad El Rama es un importante puerto fluvial abrazado por tres imponentes ríos: el **Río Escondido**, el **Río Siquia** y el **Río Mico**. Es la puerta de entrada natural hacia Bluefields y el mar Caribe, ofreciendo una combinación incomparable de aventura fluvial, biodiversidad e interconectividad cultural.
+            </p>
+        </div>
+    </section>
+
+    <!-- Atractivos Turísticos -->
+    <section id="atractivos" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-jungle-green">Principales Atractivos</h2>
+                <p class="text-gray-600 mt-2">Vive experiencias inolvidables en contacto con la naturaleza</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tarjeta 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Navegación Río Escondido">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-river-blue text-sm mb-2">
+                            <i class="fa-solid fa-ship"></i>
+                            <span class="font-semibold">Aventura Fluvial</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Navegación por el Río Escondido</h3>
+                        <p class="text-gray-600 text-sm">
+                            Embarca en un recorrido fascinante en panga o barco rápido desde el puerto hacia el Caribe, rodeado de vegetación exuberante y fauna silvestre.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1511497584788-8767611136f6?auto=format&fit=crop&w=800&q=80" alt="Ecoturismo y Naturaleza">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-jungle-green text-sm mb-2">
+                            <i class="fa-solid fa-tree"></i>
+                            <span class="font-semibold">Naturaleza</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Reserva y Selva Tropical</h3>
+                        <p class="text-gray-600 text-sm">
+                            Explorasenderos ecológicos, avistamiento de aves exóticas y la rica biodiversidad que rodea las cuencas de los ríos Siquia y Mico.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                    <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=800&q=80" alt="Pesca Deportiva">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-2 text-warm-sand text-sm mb-2">
+                            <i class="fa-solid fa-fish"></i>
+                            <span class="font-semibold">Deportes y Ocio</span>
+                        </div>
+                        <h3 class="font-bold text-xl text-gray-800 mb-2">Pesca Deportiva y Puerto</h3>
+                        <p class="text-gray-600 text-sm">
+                            Aprovecha sus vastas aguas para la pesca artesanal o deportiva, y conoce el dinamismo del muelle arrocero y de carga de la ciudad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultura y Gastronomía -->
+    <section id="cultura" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-caribbean-teal font-bold uppercase tracking-wider">Tradición y Sabor</span>
+                    <h2 class="text-3xl font-bold text-jungle-green mt-2 mb-6">Gastronomía y Cultura Mestiza-Caribeña</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        El Rama es un punto de convergencia único entre la cultura del pacífico/centro de Nicaragua y el Caribe. Aquí podrás disfrutar de una gastronomía variada donde resalta el coco, el marisco fresco y la sazón tradicional.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3 text-gray-700">
+                            <i class="fa-solid fa-utensils text-warm-sand"></i>
+                            <span><strong>Rondón y Rice and Beans:</strong> Platillos con coco y la auténtica sazón caribeña.</span>
+                        </li>
+                        <li class="flex items-center space-x-3 text-gray-700">
+                            <i class="fa-solid fa-drum text-warm-sand"></i>
+                            <span><strong>Fiestas Tradicionales:</strong> Celebraciones llenas de música, ritmos y alegría contagiosa.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Gastronomía Caribeña" class="rounded-lg shadow-xl w-full object-cover h-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto / Planes -->
+    <section id="contacto" class="py-16 bg-jungle-green text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">¿Listo para explorar El Rama?</h2>
+            <p class="text-gray-200 mb-8">Planifica tu traslado en panga, hospedajes locales y tours guiados por los ríos de la RACCS.</p>
+            <form class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto">
+                <input type="email" placeholder="Tu correo electrónico" class="px-4 py-3 rounded-lg text-gray-800 focus:outline-none col-span-1 sm:col-span-2">
+                <button type="submit" class="bg-warm-sand hover:bg-yellow-500 text-gray-900 font-bold px-6 py-3 rounded-lg transition duration-300">
+                    Más Información
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-facebook text-xl"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-youtube text-xl"></i></a>
+            </div>
+            <p class="text-sm">&copy; 2026 Descubre El Rama, Nicaragua. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
