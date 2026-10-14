@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="description" content="Planea tu viaje a Copacabana, Bolivia: descubre la Isla del Sol, la Basílica, el Cerro Calvario y los sabores del Lago Titicaca.">
+    <title>Copacabana, Bolivia | Magia a Orillas del Titicaca</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lake: {
+                            50: '#f0f9ff',
+                            400: '#67e8f9',
+                            600: '#0891b2',
+                            900: '#164e63',
+                        },
+                        andean: {
+                            gold: '#fbbf24',
+                            terra: '#c66b45',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .perspective-1000 { perspective: 1000px; }
+        .card-3d {
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
+        }
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(4deg) rotateY(-4deg);
+            box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.25);
+        }
+        .float-badge { animation: float 5s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased selection:bg-lake-600 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3 text-2xl font-extrabold">
+                <span class="grid h-10 w-10 place-items-center rounded-xl bg-andean-gold text-slate-900">☀</span>
+                <span class="bg-gradient-to-r from-lake-400 to-andean-gold bg-clip-text text-transparent">COPACABANA <span class="text-base">🇧🇴</span></span>
+            </a>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-300">
+                <a href="#inicio" class="hover:text-lake-600 transition">Inicio</a>
+                <a href="#atractivos" class="hover:text-lake-600 transition">Atractivos</a>
+                <a href="#cultura" class="hover:text-lake-600 transition">Cultura y Sabor</a>
+                <a href="#contacto" class="hover:text-lake-600 transition">Planifica tu Viaje</a>
+            </nav>
+            <a href="#contacto" class="bg-gradient-to-r from-lake-600 to-sky-500 hover:from-lake-500 hover:to-sky-400 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-lake-600/30 transition transform hover:-translate-y-0.5">
+                Explorar Ahora
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=85&w=1920" alt="Paisaje andino junto al Lago Titicaca" fetchpriority="high" class="w-full h-full object-cover opacity-50 scale-105">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/55 to-slate-900/20"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-4 rounded-full bg-lake-600/20 border border-lake-600/40 text-lake-400 text-sm font-semibold mb-6 tracking-wide uppercase backdrop-blur-sm">
+                BOLIVIA · 3.812 M S. N. M. · LAGO TITICACA
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                Descubre la Magia de <span class="bg-gradient-to-r from-sky-400 to-andean-gold bg-clip-text text-transparent">Copacabana</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-light">
+                Mira cómo el sol pinta los Andes, navega hacia islas legendarias y descubre la calidez de un pueblo a orillas del lago navegable más alto del mundo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#atractivos" class="bg-lake-600 hover:bg-lake-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl shadow-lake-600/40 transition duration-300 transform hover:-translate-y-1">
+                    Explorar Copacabana
+                </a>
+                <a href="#cultura" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold px-8 py-4 rounded-2xl backdrop-blur-md transition duration-300 transform hover:-translate-y-1">
+                    Gastronomía y Tradición
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section aria-label="Datos de Copacabana" class="relative z-10 -mt-10 mx-auto grid max-w-5xl grid-cols-1 gap-3 px-6 sm:grid-cols-3">
+        <div class="rounded-2xl border border-slate-700 bg-slate-800/95 p-5 text-center shadow-xl backdrop-blur"><span class="block text-2xl font-extrabold text-lake-400">3.812 m</span><span class="mt-1 block text-xs uppercase tracking-widest text-slate-400">Altitud andina</span></div>
+        <div class="rounded-2xl border border-slate-700 bg-slate-800/95 p-5 text-center shadow-xl backdrop-blur"><span class="block text-2xl font-extrabold text-andean-gold">Titicaca</span><span class="mt-1 block text-xs uppercase tracking-widest text-slate-400">Lago sagrado</span></div>
+        <div class="rounded-2xl border border-slate-700 bg-slate-800/95 p-5 text-center shadow-xl backdrop-blur"><span class="block text-2xl font-extrabold text-orange-300">Todo el año</span><span class="mt-1 block text-xs uppercase tracking-widest text-slate-400">Una nueva aventura</span></div>
+    </section>
+
+    <!-- Atractivos Turísticos (Tarjetas con efecto 3D) -->
+    <section id="atractivos" class="py-24 max-w-7xl mx-auto px-6 perspective-1000">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Lugares Imperdibles</h2>
+            <p class="text-slate-400">Explora los puntos más emblemáticos que cautivan a viajeros de todo el mundo.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="card-3d bg-slate-800/60 border border-slate-700/60 rounded-3xl overflow-hidden backdrop-blur-xl">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=80&w=800" alt="Isla del Sol" class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-andean-gold">
+                        Místico
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Isla del Sol</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Cuna de la mitología inca. Disfruta de caminatas por senderos arqueológicos y vistas panorámicas inigualables del lago sagrado.
+                    </p>
+                    <span class="text-lake-400 font-semibold text-sm flex items-center gap-1 hover:underline cursor-pointer">
+                        Saber más &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card-3d bg-slate-800/60 border border-slate-700/60 rounded-3xl overflow-hidden backdrop-blur-xl">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&q=85&w=800" alt="Arquitectura histórica de estilo andino" loading="lazy" class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-andean-gold">
+                        Arquitectura
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Basílica de la Virgen</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Un impresionante santuario de estilo morisco y colonial que resguarda a la venerada Virgen Morena, patrona de Bolivia.
+                    </p>
+                    <span class="text-lake-400 font-semibold text-sm flex items-center gap-1 hover:underline cursor-pointer">
+                        Saber más &rarr;
+                    </span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card-3d bg-slate-800/60 border border-slate-700/60 rounded-3xl overflow-hidden backdrop-blur-xl">
+                <div class="h-56 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=80&w=800" alt="Cerro Calvario" class="w-full h-full object-cover transform hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 right-4 bg-slate-900/70 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-andean-gold">
+                        Aventura
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Cerro Calvario</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        El mejor mirador natural de Copacabana. Ideal para realizar trekking ligero y presenciar los atardeceres más hermosos sobre el Titicaca.
+                    </p>
+                    <span class="text-lake-400 font-semibold text-sm flex items-center gap-1 hover:underline cursor-pointer">
+                        Saber más &rarr;
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultura y Gastronomía -->
+    <section id="cultura" class="py-24 bg-slate-950/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-andean-gold text-sm font-semibold uppercase tracking-wider">Tradición Culinaria</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">De la orilla a tu mesa: trucha del Titicaca</h2>
+                <p class="text-slate-300 leading-relaxed mb-6 font-light">
+                    Ninguna visita a Copacabana está completa sin probar una fresca trucha extraída directamente del lago, preparada al horno, a la plancha o frita en los restaurantes locales a orillas del muelle.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800">
+                        <span class="block text-2xl font-bold text-lake-400">3,812 m</span>
+                        <span class="text-xs text-slate-400">De altitud sobre el nivel del mar</span>
+                    </div>
+                    <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800">
+                        <span class="block text-2xl font-bold text-andean-gold">100%</span>
+                        <span class="text-xs text-slate-400">Cultura ancestral viva</span>
+                    </div>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-r from-lake-600 to-andean-gold rounded-3xl blur-xl opacity-30"></div>
+                <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-4 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" alt="Gastronomía local" class="rounded-2xl w-full h-80 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-10 max-w-2xl">
+                <span class="text-andean-gold text-sm font-semibold uppercase tracking-wider">Un día a tu manera</span>
+                <h2 class="mt-2 text-3xl font-bold md:text-4xl">Tu mini ruta por Copacabana</h2>
+                <p class="mt-3 text-slate-400">Un plan sencillo para dejarte sorprender, sin correr.</p>
+            </div>
+            <div class="grid gap-4 md:grid-cols-3">
+                <article class="card-3d rounded-3xl border border-slate-700 bg-slate-800/70 p-6">
+                    <span class="text-sm font-bold text-lake-400">09:00 · DESPACITO</span>
+                    <h3 class="mt-3 text-xl font-bold">Paseo por el pueblo</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-400">Recorre la Basílica y las calles del centro antes de que el sol del altiplano esté más alto.</p>
+                </article>
+                <article class="card-3d rounded-3xl border border-slate-700 bg-slate-800/70 p-6">
+                    <span class="text-sm font-bold text-andean-gold">12:30 · CON SABOR</span>
+                    <h3 class="mt-3 text-xl font-bold">Almuerzo frente al lago</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-400">Prueba la trucha local y disfruta el paisaje a orillas del Titicaca.</p>
+                </article>
+                <article class="card-3d rounded-3xl border border-slate-700 bg-slate-800/70 p-6">
+                    <span class="text-sm font-bold text-orange-300">16:00 · ATARDECER</span>
+                    <h3 class="mt-3 text-xl font-bold">Subida al Cerro Calvario</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-slate-400">Sube con calma, lleva agua y abrigo, y quédate a ver cómo cambia el color del lago.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto / Planifica tu viaje -->
+    <section id="contacto" class="py-24 max-w-4xl mx-auto px-6">
+        <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700/80 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-20 -bottom-20 w-80 h-85 bg-lake-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 text-center max-w-xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold mb-4">¿Listo para tu próxima aventura?</h2>
+                <p class="text-slate-400 text-sm">Déjanos tu correo y recibe una guía gratuita con los mejores tips para viajar a Copacabana.</p>
+            </div>
+
+            <form class="relative z-10 flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Tu correo electrónico" class="bg-slate-950/80 border border-slate-700 px-5 py-4 rounded-xl flex-1 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-lake-600 transition">
+                <button type="submit" class="bg-lake-600 hover:bg-lake-500 text-white font-semibold px-6 py-4 rounded-xl shadow-lg transition">
+                    Suscribirme
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-center text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Copacabana Turística. Hecho con ❤️ para Bolivia.</p>
+            <div class="flex gap-6">
+                <a href="#inicio" class="hover:text-slate-300 transition">Privacidad</a>
+                <a href="#inicio" class="hover:text-slate-300 transition">Términos</a>
+                <a href="#inicio" class="hover:text-slate-300 transition">Soporte</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

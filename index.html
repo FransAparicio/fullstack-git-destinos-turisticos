@@ -1,11 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Destinos Turisticos</title>
+    <meta name="theme-color" content="#082f49">
+    <meta name="description" content="Descubre Copacabana, Bolivia: el Lago Titicaca, la Isla del Sol, sabores andinos y aventuras inolvidables.">
+    <title>Copacabana, Bolivia | Un viaje al Titicaca</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Outfit', 'sans-serif'] },
+                    colors: {
+                        lago: { 400: '#38bdf8', 500: '#0ea5e9', 900: '#082f49' },
+                        sol: '#fbbf24',
+                        tierra: '#c66b45'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; }
+        .perspective { perspective: 1200px; }
+        .float-card { animation: float 6s ease-in-out infinite; }
+        .float-card-delayed { animation: float 7s ease-in-out 1s infinite; }
+        .card-3d { transition: transform .45s ease, box-shadow .45s ease; }
+        .card-3d:hover { transform: translateY(-9px) rotateX(3deg) rotateY(-3deg); box-shadow: 0 28px 55px -25px rgb(8 47 73 / .5); }
+        @keyframes float { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-12px) rotate(1deg); } }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+        }
+    </style>
 </head>
-<body>
-    <h1>Destinos Turisticos</h1>
+<body class="bg-[#fffaf1] text-slate-900 antialiased selection:bg-amber-300 selection:text-slate-900">
+    <header class="absolute inset-x-0 top-0 z-20">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6" aria-label="Navegación principal">
+            <a href="#inicio" class="flex items-center gap-3 text-white" aria-label="Copacabana, volver al inicio">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-amber-300 text-xl text-sky-950 shadow-lg shadow-amber-950/20">☀</span>
+                <span class="leading-tight"><span class="block text-lg font-extrabold tracking-wide">BOLIVIA</span><span class="text-xs font-medium tracking-[.24em] text-white/70">COPACABANA</span></span>
+            </a>
+            <div class="hidden items-center gap-8 text-sm font-semibold text-white/85 md:flex">
+                <a href="#experiencias" class="transition hover:text-amber-300">Experiencias</a>
+                <a href="#sabores" class="transition hover:text-amber-300">Sabores</a>
+                <a href="bolivia-copacabana.html" class="rounded-full border border-white/40 px-5 py-2.5 transition hover:border-amber-300 hover:bg-amber-300 hover:text-sky-950">Explorar destino ↗</a>
+            </div>
+            <a href="bolivia-copacabana.html" class="rounded-full bg-amber-300 px-4 py-2.5 text-sm font-bold text-sky-950 shadow-lg shadow-amber-950/20 transition hover:-translate-y-0.5 md:hidden">Explorar ↗</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="relative isolate min-h-[760px] overflow-hidden bg-sky-950">
+            <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=85&w=2200" alt="Paisaje de agua y montañas en el altiplano boliviano" fetchpriority="high" class="absolute inset-0 -z-20 h-full w-full object-cover object-center">
+            <div class="absolute inset-0 -z-10 bg-gradient-to-r from-sky-950/95 via-sky-950/65 to-sky-950/15"></div>
+            <div class="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-[#fffaf1] to-transparent"></div>
+            <div class="mx-auto grid min-h-[760px] max-w-7xl items-center gap-12 px-6 pb-24 pt-32 lg:grid-cols-[1.05fr_.95fr]">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-medium text-amber-200 backdrop-blur"><span class="h-2 w-2 rounded-full bg-amber-300"></span> La joya boliviana del Titicaca</span>
+                    <h1 class="mt-7 text-5xl font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-7xl">Donde los Andes<br>se encuentran con<br><span class="text-amber-300">el cielo.</span></h1>
+                    <p class="mt-6 max-w-xl text-lg leading-relaxed text-white/80">Respira profundo, mira el azul infinito y déjate llevar por la magia de Copacabana. Tu aventura en Bolivia empieza aquí.</p>
+                    <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+                        <a href="bolivia-copacabana.html" class="inline-flex items-center justify-center gap-3 rounded-2xl bg-amber-300 px-7 py-4 font-bold text-sky-950 shadow-xl shadow-amber-950/25 transition hover:-translate-y-1 hover:bg-amber-200">Descubrir Copacabana <span aria-hidden="true">↗</span></a>
+                        <a href="#experiencias" class="inline-flex items-center justify-center rounded-2xl border border-white/35 bg-white/10 px-7 py-4 font-semibold text-white backdrop-blur transition hover:bg-white/20">Ver qué hacer</a>
+                    </div>
+                    <div class="mt-12 flex flex-wrap gap-x-8 gap-y-4 text-sm text-white/75">
+                        <span>⛰ <strong class="text-white">3.812 m</strong> sobre el nivel del mar</span>
+                        <span>✦ <strong class="text-white">Lago Titicaca</strong> · Bolivia</span>
+                    </div>
+                </div>
+                <div class="perspective relative hidden h-[500px] lg:block" aria-label="Fotografías del paisaje de Copacabana">
+                    <div class="float-card absolute right-10 top-8 w-72 rotate-3 rounded-[2rem] border border-white/50 bg-white p-3 shadow-2xl shadow-sky-950/40">
+                        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&q=85&w=700" alt="Montañas andinas bajo el cielo abierto" class="h-72 w-full rounded-[1.4rem] object-cover">
+                        <div class="flex items-center justify-between px-2 pb-1 pt-4"><span class="font-bold">Aventura sin prisa</span><span class="text-xl text-orange-500">✳</span></div>
+                    </div>
+                    <div class="float-card-delayed absolute bottom-8 left-0 w-64 -rotate-6 rounded-[2rem] border border-white/50 bg-white p-3 shadow-2xl shadow-sky-950/40">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=85&w=700" alt="Agua azul brillante del lago" class="h-48 w-full rounded-[1.4rem] object-cover">
+                        <div class="px-2 pb-1 pt-3"><span class="text-xs font-bold uppercase tracking-widest text-sky-700">Lago sagrado</span><p class="mt-1 font-bold">Un azul que no se olvida</p></div>
+                    </div>
+                    <div class="absolute bottom-14 right-2 grid h-24 w-24 place-items-center rounded-full bg-amber-300 text-center text-xs font-extrabold uppercase leading-tight text-sky-950 shadow-xl shadow-sky-950/30">Hecho<br>para<br>soñar ✦</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiencias" class="relative z-10 mx-auto max-w-7xl px-6 pb-24 pt-6">
+            <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                <div><span class="text-sm font-bold uppercase tracking-[.2em] text-orange-700">Tu próxima postal</span><h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Pequeño pueblo,<br class="sm:hidden"> grandes aventuras.</h2></div>
+                <p class="max-w-md text-slate-600">Entre aguas sagradas, cerros dorados y calles llenas de historia, cada día tiene su propio ritmo.</p>
+            </div>
+            <div class="grid gap-5 md:grid-cols-3">
+                <a href="bolivia-copacabana.html#atractivos" class="card-3d group overflow-hidden rounded-[1.75rem] bg-white shadow-lg shadow-sky-950/5">
+                    <div class="relative h-60 overflow-hidden"><img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&q=85&w=900" alt="Paisaje de montaña junto al Titicaca" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105"><span class="absolute left-4 top-4 rounded-full bg-amber-300 px-3 py-1 text-xs font-bold text-sky-950">01 · MÍSTICO</span></div>
+                    <div class="p-6"><h3 class="text-2xl font-bold">Isla del Sol</h3><p class="mt-2 leading-relaxed text-slate-600">Camina por senderos ancestrales y contempla el lago desde su corazón.</p><span class="mt-5 inline-block font-bold text-sky-800">Ver experiencias ↗</span></div>
+                </a>
+                <a href="bolivia-copacabana.html#atractivos" class="card-3d group overflow-hidden rounded-[1.75rem] bg-white shadow-lg shadow-sky-950/5">
+                    <div class="relative h-60 overflow-hidden"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&q=85&w=900" alt="Arquitectura histórica y detalles de una construcción andina" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105"><span class="absolute left-4 top-4 rounded-full bg-orange-200 px-3 py-1 text-xs font-bold text-orange-950">02 · CULTURA</span></div>
+                    <div class="p-6"><h3 class="text-2xl font-bold">Basílica y pueblo</h3><p class="mt-2 leading-relaxed text-slate-600">Descubre la historia, las tradiciones y la calidez de su gente.</p><span class="mt-5 inline-block font-bold text-sky-800">Conocer más ↗</span></div>
+                </a>
+                <a href="bolivia-copacabana.html#cultura" class="card-3d group overflow-hidden rounded-[1.75rem] bg-white shadow-lg shadow-sky-950/5">
+                    <div class="relative h-60 overflow-hidden"><img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&q=85&w=900" alt="Paisaje montañoso para una caminata" loading="lazy" class="h-full w-full object-cover transition duration-700 group-hover:scale-105"><span class="absolute left-4 top-4 rounded-full bg-sky-200 px-3 py-1 text-xs font-bold text-sky-950">03 · SABOR</span></div>
+                    <div class="p-6"><h3 class="text-2xl font-bold">Sabor a Titicaca</h3><p class="mt-2 leading-relaxed text-slate-600">Haz una pausa frente al lago y prueba la trucha recién preparada.</p><span class="mt-5 inline-block font-bold text-sky-800">Probar Bolivia ↗</span></div>
+                </a>
+            </div>
+        </section>
+
+        <section id="sabores" class="overflow-hidden bg-sky-950 text-white">
+            <div class="mx-auto grid max-w-7xl items-center gap-10 px-6 py-20 md:grid-cols-2">
+                <div class="order-2 md:order-1">
+                    <span class="text-sm font-bold uppercase tracking-[.2em] text-amber-300">El sabor del altiplano</span>
+                    <h2 class="mt-4 text-4xl font-extrabold sm:text-5xl">Un brindis por<br>la buena vida.</h2>
+                    <p class="mt-5 max-w-lg leading-relaxed text-sky-100/75">Trucha del lago, api calentito, mercados coloridos y sobremesas con vista al agua. Copacabana se disfruta con todos los sentidos.</p>
+                    <a href="bolivia-copacabana.html#cultura" class="mt-8 inline-flex rounded-xl bg-amber-300 px-6 py-3.5 font-bold text-sky-950 transition hover:-translate-y-1">Conoce la cultura local ↗</a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="rotate-2 rounded-[2rem] border border-white/20 bg-white/10 p-3 shadow-2xl shadow-black/30 transition hover:rotate-0">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=85&w=1000" alt="Mesa servida en un restaurante acogedor" loading="lazy" class="h-80 w-full rounded-[1.5rem] object-cover md:h-[390px]">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 py-20">
+            <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 rounded-[2rem] bg-gradient-to-br from-amber-200 via-orange-100 to-sky-100 p-8 sm:p-12 md:flex-row md:items-center">
+                <div><span class="text-sm font-bold uppercase tracking-[.2em] text-orange-800">Bolivia te espera</span><h2 class="mt-3 max-w-2xl text-3xl font-extrabold sm:text-4xl">¿Listo para perderte un ratito y encontrarte en el Titicaca?</h2></div>
+                <a href="bolivia-copacabana.html" class="shrink-0 rounded-2xl bg-sky-950 px-7 py-4 font-bold text-white shadow-xl transition hover:-translate-y-1 hover:bg-sky-800">Planifica tu visita ↗</a>
+            </div>
+        </section>
+    </main>
+    <footer class="border-t border-slate-200 px-6 py-8 text-sm text-slate-500">
+        <div class="mx-auto flex max-w-7xl flex-col justify-between gap-3 sm:flex-row"><p>© 2026 Copacabana, Bolivia · Con cariño desde el altiplano 🇧🇴</p><a href="#inicio" class="font-semibold text-sky-900 hover:text-orange-700">Volver arriba ↑</a></div>
+    </footer>
 </body>
 </html>
