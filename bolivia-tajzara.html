@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#073b4c" />
   <meta name="description" content="Descubre las Lagunas de Tajzara, un destino natural extraordinario en Tarija, Bolivia." />
-  <title>Lagunas de Tajzara | Descubre Tarija</title>
+  <title>Lagunas de Tajzara</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Material+Symbols+Rounded" rel="stylesheet" />
@@ -14,33 +14,264 @@
     tailwind.config = { theme: { extend: { colors: { forest:'#073b4c', jade:'#008c95', mint:'#ddf5f2', sand:'#fffaf1', gold:'#ffca78' }, fontFamily: { sans:['DM Sans','sans-serif'], display:['Playfair Display','serif'] }, boxShadow:{ premium:'0 22px 65px rgba(7,59,76,.15)' } } } };
   </script>
   <style>
-    ::selection{background:#ffca78;color:#073b4c}
-    body{background:#fffaf1}
-    .hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:135px;background:linear-gradient(transparent,rgba(7,59,76,.17));pointer-events:none}
-    .reveal{will-change:transform,opacity}
-    a:focus-visible,button:focus-visible{outline:3px solid #ffca78;outline-offset:4px}
-    #descubre,#experiencias,#galeria,#visita{scroll-margin-top:76px}
-    @media(max-width:640px){.hero{background-position:58% center}.hero h1{max-width:10ch}.hero .max-w-3xl{padding-top:3rem}}
+    ::selection {
+      background: #ffca78;
+      color: #073b4c;
+    }
 
-    html{scroll-behavior:smooth}body{overflow-x:hidden}.material-symbols-rounded{font-variation-settings:'FILL' 0,'wght' 350,'GRAD' 0,'opsz' 24;vertical-align:middle}.glass{background:rgba(255,255,255,.92);backdrop-filter:blur(18px)}.hero{background-image:linear-gradient(90deg,rgba(4,44,65,.84),rgba(0,100,118,.20) 76%),linear-gradient(0deg,rgba(7,52,68,.45),transparent 50%),url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=85');background-size:cover;background-position:center}.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:translateY(0)}.image-zoom{transition:transform .7s cubic-bezier(.2,.7,.2,1)}.group:hover .image-zoom{transform:scale(1.07)}.nav-scrolled{background:rgba(7,59,76,.96);box-shadow:0 10px 35px rgba(0,0,0,.15)}.float{animation:float 5s ease-in-out infinite}@keyframes float{50%{transform:translateY(-9px)}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #fffaf1;
+      overflow-x: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 135px;
+      background: linear-gradient(transparent, rgba(7, 59, 76, 0.17));
+      pointer-events: none;
+    }
+
+    .reveal {
+      will-change: transform, opacity;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .image-zoom {
+      transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+
+    .group:hover .image-zoom {
+      transform: scale(1.07);
+    }
+
+    .nav-scrolled {
+      background: rgba(7, 59, 76, 0.96);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    .material-symbols-rounded {
+      font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero {
+      background-image: linear-gradient(90deg, rgba(4, 44, 65, 0.84), rgba(0, 100, 118, 0.2) 76%), linear-gradient(0deg, rgba(7, 52, 68, 0.45), transparent 50%), url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2200&q=85');
+      background-size: cover;
+      background-position: center;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #ffca78;
+      outline-offset: 4px;
+    }
+
+    #descubre,
+    #experiencias,
+    #galeria,
+    #visita {
+      scroll-margin-top: 76px;
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        background-position: 58% center;
+      }
+
+      .hero h1 {
+        max-width: 10ch;
+      }
+
+      .hero .max-w-3xl {
+        padding-top: 3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
   </style>
 </head>
 <body class="bg-sand text-forest font-sans antialiased">
   <header id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300 text-white">
-    <nav class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between" aria-label="Navegación principal">
-      <a href="#inicio" class="flex items-center gap-3 font-bold tracking-wide"><span class="w-11 h-11 rounded-2xl bg-white/15 border border-white/20 grid place-items-center"><span class="material-symbols-rounded text-3xl">landscape</span></span><span class="leading-tight text-lg">TAJZARA <small class="block text-[10px] uppercase tracking-[.3em] font-medium text-white/70">Tarija · Bolivia</small></span></a>
-      <div class="hidden md:flex items-center gap-9 text-sm font-semibold"><a class="hover:text-gold transition" href="#descubre">Descubre</a><a class="hover:text-gold transition" href="#experiencias">Experiencias</a><a class="hover:text-gold transition" href="#galeria">Galería</a><a class="hover:text-gold transition" href="#visita">Tu visita</a></div>
-      <a href="#visita" class="hidden md:inline-flex items-center gap-2 bg-white text-forest rounded-full px-6 py-3 text-sm font-bold hover:bg-[#e4f8f7] transition">Explorar destino <span class="material-symbols-rounded text-lg">arrow_outward</span></a>
-      <button id="menuButton" class="md:hidden p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><span class="material-symbols-rounded text-3xl">menu</span></button>
+    <nav
+      class="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between"
+      aria-label="Navegación principal"
+    >
+      <a href="#inicio" class="flex items-center gap-3 font-bold tracking-wide">
+        <span class="w-11 h-11 rounded-2xl bg-white/15 border border-white/20 grid place-items-center">
+          <span class="material-symbols-rounded text-3xl">landscape</span>
+        </span>
+        <span class="leading-tight text-lg">
+          TAJZARA
+          <small class="block text-[10px] uppercase tracking-[.3em] font-medium text-white/70">
+            Tarija · Bolivia
+          </small>
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-9 text-sm font-semibold">
+        <a class="hover:text-gold transition" href="#descubre">Descubre</a>
+        <a class="hover:text-gold transition" href="#experiencias">Experiencias</a>
+        <a class="hover:text-gold transition" href="#galeria">Galería</a>
+        <a class="hover:text-gold transition" href="#visita">Tu visita</a>
+      </div>
+
+      <a
+        href="#visita"
+        class="hidden md:inline-flex items-center gap-2 bg-white text-forest rounded-full px-6 py-3 text-sm font-bold hover:bg-[#e4f8f7] transition"
+      >
+        Explorar destino
+        <span class="material-symbols-rounded text-lg">arrow_outward</span>
+      </a>
+
+      <button
+        id="menuButton"
+        class="md:hidden p-2"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <span class="material-symbols-rounded text-3xl">menu</span>
+      </button>
     </nav>
-    <div id="mobileMenu" class="hidden md:hidden bg-forest px-7 py-5 space-y-5 text-sm font-semibold"><a class="block" href="#descubre">Descubre</a><a class="block" href="#experiencias">Experiencias</a><a class="block" href="#galeria">Galería</a><a class="block" href="#visita">Tu visita</a></div>
+
+    <div id="mobileMenu" class="hidden md:hidden bg-forest px-7 py-5 space-y-5 text-sm font-semibold">
+      <a class="block" href="#descubre">Descubre</a>
+      <a class="block" href="#experiencias">Experiencias</a>
+      <a class="block" href="#galeria">Galería</a>
+      <a class="block" href="#visita">Tu visita</a>
+    </div>
   </header>
   <main>
     <section id="inicio" class="hero relative min-h-[720px] h-screen max-h-[1050px] flex items-center text-white overflow-hidden">
-      <div class="absolute -right-24 bottom-14 w-80 h-80 rounded-full border border-white/20 pointer-events-none"></div><div class="absolute -right-10 bottom-28 w-64 h-64 rounded-full border border-white/15 pointer-events-none"></div><div class="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-20 relative z-10"><div class="max-w-3xl"><div class="inline-flex items-center gap-2 border border-white/35 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 text-xs sm:text-sm tracking-wider mb-8"><span class="material-symbols-rounded text-gold text-lg">explore</span> DESCUBRE LA MAGIA DEL SUR DE BOLIVIA</div><h1 class="font-display text-5xl sm:text-7xl lg:text-[92px] leading-[1.08] tracking-tight mb-7 drop-shadow-lg">Un viaje hacia<br>lo <em class="text-gold font-medium">extraordinario.</em></h1><p class="text-lg sm:text-xl text-white/85 max-w-xl leading-relaxed mb-10">Descubre la magia de las Lagunas de Tajzara. Paisajes altoandinos, horizontes infinitos y una tranquilidad que se siente.</p><div class="flex flex-wrap gap-4"><a href="#descubre" class="inline-flex items-center gap-3 bg-gold text-forest shadow-lg shadow-amber-900/10 rounded-full px-8 py-4 font-bold shadow-premium hover:bg-white transition">Descubrir Tajzara <span class="material-symbols-rounded">arrow_forward</span></a><a href="#galeria" class="inline-flex items-center gap-3 rounded-full border border-white/50 px-8 py-4 font-bold hover:bg-white/15 transition"><span class="material-symbols-rounded">photo_library</span> Ver galería</a></div></div></div>
-      <div class="absolute bottom-8 inset-x-0 max-w-7xl mx-auto px-5 sm:px-8 flex justify-between items-end text-white/85 text-sm"><span class="flex items-center gap-2"><span class="material-symbols-rounded">location_on</span> Cordillera de Sama · Tarija</span><a href="#descubre" class="flex items-center gap-2 hover:text-white">Desliza para explorar <span class="material-symbols-rounded animate-bounce">south</span></a></div>
+      <div class="absolute -right-24 bottom-14 w-80 h-80 rounded-full border border-white/20 pointer-events-none"></div>
+      <div class="absolute -right-10 bottom-28 w-64 h-64 rounded-full border border-white/15 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 w-full pt-20 relative z-10">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 border border-white/35 bg-white/10 backdrop-blur-sm rounded-full px-5 py-2 text-xs sm:text-sm tracking-wider mb-8">
+            <span class="material-symbols-rounded text-gold text-lg">explore</span>
+            DESCUBRE LA MAGIA DEL SUR DE BOLIVIA
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-7xl lg:text-[92px] leading-[1.08] tracking-tight mb-7 drop-shadow-lg">
+            Un viaje hacia<br />
+            lo <em class="text-gold font-medium">extraordinario.</em>
+          </h1>
+
+          <p class="text-lg sm:text-xl text-white/85 max-w-xl leading-relaxed mb-10">
+            Descubre la magia de las Lagunas de Tajzara. Paisajes altoandinos, horizontes infinitos y una tranquilidad que se siente.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#descubre"
+              class="inline-flex items-center gap-3 bg-gold text-forest shadow-lg shadow-amber-900/10 rounded-full px-8 py-4 font-bold shadow-premium hover:bg-white transition"
+            >
+              Descubrir Tajzara
+              <span class="material-symbols-rounded">arrow_forward</span>
+            </a>
+
+            <a
+              href="#galeria"
+              class="inline-flex items-center gap-3 rounded-full border border-white/50 px-8 py-4 font-bold hover:bg-white/15 transition"
+            >
+              <span class="material-symbols-rounded">photo_library</span>
+              Ver galería
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 inset-x-0 max-w-7xl mx-auto px-5 sm:px-8 flex justify-between items-end text-white/85 text-sm">
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-rounded">location_on</span>
+          Cordillera de Sama · Tarija
+        </span>
+
+        <a href="#descubre" class="flex items-center gap-2 hover:text-white">
+          Desliza para explorar
+          <span class="material-symbols-rounded animate-bounce">south</span>
+        </a>
+      </div>
     </section>
-    <section class="relative z-10 max-w-6xl mx-auto px-5 -mt-1 sm:-mt-12"><div class="bg-white/95 backdrop-blur-xl rounded-[2rem] border border-cyan-50 shadow-premium grid grid-cols-2 lg:grid-cols-4 gap-6 p-7 sm:p-9"><div class="flex gap-3 items-center"><span class="material-symbols-rounded text-jade text-3xl">landscape</span><div><p class="text-xs text-slate-500">Entorno</p><p class="font-bold">Altiplano tarijeño</p></div></div><div class="flex gap-3 items-center"><span class="material-symbols-rounded text-jade text-3xl">water</span><div><p class="text-xs text-slate-500">Atractivo</p><p class="font-bold">Lagunas naturales</p></div></div><div class="flex gap-3 items-center"><span class="material-symbols-rounded text-jade text-3xl">flutter_dash</span><div><p class="text-xs text-slate-500">Naturaleza</p><p class="font-bold">Aves altoandinas</p></div></div><div class="flex gap-3 items-center"><span class="material-symbols-rounded text-jade text-3xl">photo_camera</span><div><p class="text-xs text-slate-500">Ideal para</p><p class="font-bold">Fotografía y calma</p></div></div></div></section>
+    <section class="relative z-10 max-w-6xl mx-auto px-5 -mt-1 sm:-mt-12">
+      <div class="bg-white/95 backdrop-blur-xl rounded-[2rem] border border-cyan-50 shadow-premium grid grid-cols-2 lg:grid-cols-4 gap-6 p-7 sm:p-9">
+        <div class="flex gap-3 items-center">
+          <span class="material-symbols-rounded text-jade text-3xl">landscape</span>
+          <div>
+            <p class="text-xs text-slate-500">Entorno</p>
+            <p class="font-bold">Altiplano tarijeño</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 items-center">
+          <span class="material-symbols-rounded text-jade text-3xl">water</span>
+          <div>
+            <p class="text-xs text-slate-500">Atractivo</p>
+            <p class="font-bold">Lagunas naturales</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 items-center">
+          <span class="material-symbols-rounded text-jade text-3xl">flutter_dash</span>
+          <div>
+            <p class="text-xs text-slate-500">Naturaleza</p>
+            <p class="font-bold">Aves altoandinas</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3 items-center">
+          <span class="material-symbols-rounded text-jade text-3xl">photo_camera</span>
+          <div>
+            <p class="text-xs text-slate-500">Ideal para</p>
+            <p class="font-bold">Fotografía y calma</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="descubre" class="py-24 lg:py-32 bg-gradient-to-b from-sand to-white"><div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-16 items-center"><div class="reveal relative"><img loading="lazy" class="rounded-[2rem] w-full h-[520px] object-cover shadow-premium" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1100&q=85" alt="Paisaje de laguna entre montañas, imagen ilustrativa" /><div class="float absolute -bottom-7 right-4 sm:-right-7 bg-white rounded-3xl p-6 shadow-premium flex items-center gap-4"><span class="w-14 h-14 rounded-2xl bg-mint grid place-items-center text-jade"><span class="material-symbols-rounded text-3xl">eco</span></span><div><p class="font-display text-2xl font-bold">Naturaleza</p><p class="text-sm text-slate-500">en estado puro</p></div></div></div><div class="reveal"><p class="text-jade font-bold tracking-[.2em] text-xs uppercase mb-5">EL ENCANTO DE LA PUNA TARIJEÑA</p><h2 class="font-display text-4xl sm:text-5xl lg:text-6xl leading-tight mb-7">Un refugio de paz <span class="text-jade">entre montañas.</span></h2><p class="text-slate-600 leading-8 mb-6">En el corazón de la Reserva Biológica Cordillera de Sama, las Lagunas de Tajzara ofrecen uno de los escenarios naturales más cautivadores del sur de Bolivia.</p><p class="text-slate-600 leading-8 mb-9">Sus espejos de agua, cielos inmensos y aves andinas invitan a conectar con el paisaje y descubrir la belleza serena de la puna tarijeña.</p><a href="#experiencias" class="inline-flex gap-3 items-center font-bold text-jade border-b-2 border-jade pb-2">Conoce las experiencias <span class="material-symbols-rounded">north_east</span></a></div></div></section>
     <section id="experiencias" class="bg-[#eaf8f7] py-24"><div class="max-w-7xl mx-auto px-5 sm:px-8"><div class="reveal text-center max-w-2xl mx-auto mb-14"><p class="text-jade font-bold tracking-[.2em] text-xs uppercase mb-4">EXPLORA · SIENTE · DESCUBRE</p><h2 class="font-display text-4xl sm:text-5xl mb-5">Experiencias inolvidables</h2><p class="text-slate-600">Momentos sencillos que se convierten en grandes recuerdos.</p></div><div class="grid md:grid-cols-3 gap-7"><article class="group reveal bg-white rounded-[1.7rem] overflow-hidden shadow-premium border border-cyan-50 hover:-translate-y-2 transition-transform duration-500"><div class="overflow-hidden h-64"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Fauna silvestre en un paisaje natural, imagen ilustrativa" /></div><div class="p-7"><span class="material-symbols-rounded text-jade text-3xl mb-3">visibility</span><h3 class="font-display text-2xl mb-3">Observación de aves</h3><p class="text-slate-600 leading-7">Contempla especies altoandinas y, según la temporada, flamencos en el entorno de las lagunas.</p></div></article><article class="group reveal bg-white rounded-[1.7rem] overflow-hidden shadow-premium border border-cyan-50 hover:-translate-y-2 transition-transform duration-500"><div class="overflow-hidden h-64"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Montañas bajo un cielo despejado, imagen ilustrativa" /></div><div class="p-7"><span class="material-symbols-rounded text-jade text-3xl mb-3">hiking</span><h3 class="font-display text-2xl mb-3">Paisajes y caminatas</h3><p class="text-slate-600 leading-7">Disfruta los horizontes de la puna y recorre únicamente rutas permitidas con orientación local.</p></div></article><article class="group reveal bg-white rounded-[1.7rem] overflow-hidden shadow-premium border border-cyan-50 hover:-translate-y-2 transition-transform duration-500"><div class="overflow-hidden h-64"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80" alt="Paisaje abierto iluminado por el atardecer, imagen ilustrativa" /></div><div class="p-7"><span class="material-symbols-rounded text-jade text-3xl mb-3">photo_camera</span><h3 class="font-display text-2xl mb-3">Fotografía natural</h3><p class="text-slate-600 leading-7">Captura reflejos, texturas y cambios de luz en un escenario de belleza singular.</p></div></article></div></div></section>
     <section id="galeria" class="py-24 bg-gradient-to-b from-white to-[#fff4e3]"><div class="max-w-7xl mx-auto px-5 sm:px-8"><div class="reveal flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-12"><div><p class="text-jade font-bold tracking-[.2em] text-xs uppercase mb-4">Colecciona momentos</p><h2 class="font-display text-4xl sm:text-5xl">Paisajes que inspiran</h2></div><p class="text-slate-500 max-w-sm text-sm">Fotografías ilustrativas de paisajes naturales. Sustitúyelas por imágenes auténticas de Tajzara para publicar tu sitio.</p></div><div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[180px] sm:auto-rows-[230px]"><div class="group reveal col-span-2 row-span-2 overflow-hidden rounded-3xl shadow-premium"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85" alt="Laguna y montañas, fotografía ilustrativa" /></div><div class="group reveal overflow-hidden rounded-3xl"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=650&q=80" alt="Lago de montaña, fotografía ilustrativa" /></div><div class="group reveal overflow-hidden rounded-3xl"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=650&q=80" alt="Cordillera, fotografía ilustrativa" /></div><div class="group reveal overflow-hidden rounded-3xl"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=650&q=80" alt="Pradera natural, fotografía ilustrativa" /></div><div class="group reveal overflow-hidden rounded-3xl"><img loading="lazy" class="image-zoom w-full h-full object-cover" src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=650&q=80" alt="Fauna silvestre, fotografía ilustrativa" /></div></div></div></section>
