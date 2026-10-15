@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucayali: Selva Central del Perú | Turismo y Aventura</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter & Merriweather -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amazon: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            dark: '#0a2f1b'
+                        },
+                        terracotta: {
+                            500: '#d97706',
+                            600: '#c2410c',
+                            700: '#9a3412'
+                        },
+                        sand: '#fdfbf7'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(10, 47, 27, 0.45), rgba(10, 47, 27, 0.75)), url('https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-sand text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+
+    <!-- Header / Navegación -->
+    <header class="sticky top-0 z-50 bg-amazon-dark/95 backdrop-blur-md border-b border-amazon-700/50 text-white shadow-md transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo / Título -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-[#000] fa-feather-pointed text-emerald-400 text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl tracking-tight block leading-none">Ucayali</span>
+                    <span class="text-xs text-emerald-300/80 font-light tracking-widest uppercase">Selva Central del Perú</span>
+                </div>
+            </a>
+
+            <!-- Menú de navegación Desktop -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#atractivos" class="hover:text-emerald-400 transition-colors py-1">Atractivos</a>
+                <a href="#experiencias" class="hover:text-emerald-400 transition-colors py-1">Gastronomía</a>
+                <a href="#cultura" class="hover:text-emerald-400 transition-colors py-1">Cultura Shipibo</a>
+                <a href="#contacto" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-full shadow-lg shadow-emerald-900/30 transition-all font-semibold hover:-translate-y-0.5">Planear Viaje</a>
+            </nav>
+
+            <!-- Botón Menú Móvil -->
+            <button id="menu-btn" class="md:hidden text-white p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-400" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-amazon-dark border-b border-amazon-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#atractivos" class="mobile-link block py-2 text-gray-200 hover:text-emerald-400">Atractivos Principales</a>
+            <a href="#experiencias" class="mobile-link block py-2 text-gray-200 hover:text-emerald-400">Gastronomía y Vivencias</a>
+            <a href="#cultura" class="mobile-link block py-2 text-gray-200 hover:text-emerald-400">Cultura Shipibo-Konibo</a>
+            <a href="#contacto" class="mobile-link block text-center bg-emerald-600 text-white py-3 rounded-xl font-semibold mt-4">Planear Viaje</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="hero-bg min-h-[85vh] flex items-center justify-center text-center text-white px-4 sm:px-6 relative">
+            <div class="max-w-4xl mx-auto py-16">
+                <span class="inline-flex items-center gap-2 bg-emerald-500/30 text-emerald-200 border border-emerald-400/30 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
+                    <i class="fa-solid fa-compass text-amber-400"></i> Descubre el Paraíso Verde
+                </span>
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+                    Descubre la Magia de <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-amber-200">Ucayali</span>
+                </h1>
+                <p class="text-base sm:text-xl text-emerald-100/90 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                    Sumérgete en la inmensidad de la Amazonía peruana. Un destino lleno de majestuosas lagunas, imponentes cataratas, saberes ancestrales y la calidez inolvidable de su gente.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#atractivos" class="w-full sm:w-auto bg-terracotta-600 hover:bg-terracotta-500 text-white font-semibold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        Explorar Lugares <i class="fa-solid fa-arrow-down text-sm"></i>
+                    </a>
+                    <a href="#experiencias" class="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-semibold px-8 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-utensils"></i> Probar Gastronomía
+                    </a>
+                </div>
+            </div>
+
+            <!-- Banner flotante decorativo -->
+            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-8 bg-amazon-dark/80 backdrop-blur-md px-8 py-4 rounded-2xl border border-white/10 text-xs text-emerald-100">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-sun text-amber-400 text-lg"></i>
+                    <span>Clima Tropical Cáldo</span>
+                </div>
+                <div class="h-4 w-px bg-white/20"></div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-water text-cyan-400 text-lg"></i>
+                    <span>Río Ucayali y Yarinacocha</span>
+                </div>
+                <div class="h-4 w-px bg-white/20"></div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-palette text-emerald-400 text-lg"></i>
+                    <span>Arte Shipibo-Konibo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Atractivos Principales -->
+        <section id="atractivos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-terracotta-600 mb-2">Destinos Imperdibles</h2>
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-amazon-900">Atractivos Principales de Ucayali</h3>
+                <p class="mt-4 text-gray-600">Naturaleza viva, aguas tranquilas y formaciones rocosas únicas en el corazón del Perú.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Laguna de Yarinacocha -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-emerald-900/5 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&q=80&w=800" 
+                             onerror="this.src='https://placehold.co/800x600/166534/ffffff?text=Yarinacocha'" 
+                             alt="Laguna de Yarinacocha" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-800/90 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">
+                            <i class="fa-solid fa-water mr-1"></i> Pucallpa
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-amazon-900 mb-2">Laguna de Yarinacocha</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Emblemático cuerpo de agua rodeado de vegetación y restaurantes flotantes. Ideal para paseos en bote peke-peke, esquí acuático y avistamiento de delfines rosados.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-semibold text-amazon-700">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> A 15 min del centro</span>
+                            <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Boquerón del Padre Abad -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-emerald-900/5 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&q=80&w=800" 
+                             onerror="this.src='https://placehold.co/800x600/166534/ffffff?text=Padre+Abad'" 
+                             alt="Boquerón del Padre Abad" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-amber-700/90 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">
+                            <i class="fa-solid fa-mountain mr-1"></i> Aguaytía
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-amazon-900 mb-2">Boquerón del Padre Abad</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Espectacular cañón estrecho por donde corre el río Yuracyacu. Rodeado de paredes rocosas de más de 100 metros cubiertas de tupida vegetación selvática.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-semibold text-amazon-700">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Prov. Padre Abad</span>
+                            <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Ducha del Diablo -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-emerald-900/5 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&q=80&w=800" 
+                             onerror="this.src='https://placehold.co/800x600/166534/ffffff?text=Ducha+del+Diablo'" 
+                             alt="Ducha del Diablo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-teal-800/90 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">
+                            <i class="fa-solid fa-water-fall mr-1"></i> Catarata
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-amazon-900 mb-2">Catarata Ducha del Diablo</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Impresionante salto de agua de unos 105 metros de caída. Su nombre proviene de la singular silueta tallada por la naturaleza en la roca adyacente.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-semibold text-amazon-700">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Cordillera Azul</span>
+                            <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Catedral de Pucallpa -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-emerald-900/5 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1548625361-182390f7f329?auto=format&fit=crop&q=80&w=800" 
+                             onerror="this.src='https://placehold.co/800x600/166534/ffffff?text=Catedral+Pucallpa'" 
+                             alt="Catedral de Pucallpa" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-terracotta-700/90 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">
+                            <i class="fa-solid fa-church mr-1"></i> Urbano
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-amazon-900 mb-2">Catedral de Pucallpa</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Ubicada en la Plaza de Armas, destaca por su arquitectura moderna que simula una ojiva y sus finos acabados en maderas nobles de la región.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-semibold text-amazon-700">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Plaza de Armas</span>
+                            <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Artesanía Shipibo-Konibo -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-emerald-900/5 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1606744837616-56c9a5c6a6eb?auto=format&fit=crop&q=80&w=800" 
+                             onerror="this.src='https://placehold.co/800x600/166534/ffffff?text=Arte+Shipibo'" 
+                             alt="Comunidades Shipibo-Konibo" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-purple-900/90 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">
+                            <i class="fa-solid fa-[#000] fa-mask mr-1"></i> Cultural
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-amazon-900 mb-2">Comunidades Nativas</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Visita comunidades como San Francisco o Bena Jema para admirar los trazados geométricos Kené, declarados Patrimonio Cultural de la Nación.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-semibold text-amazon-700">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Yarinacocha</span>
+                            <span class="text-amber-600"><i class="fa-solid fa-star"></i> 5.0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Parque Natural de Pucallpa -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-emerald-900/5 group">
+                    <div class="relative h-60 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&q=80&w=800" 
+                             onerror="this.src='https://placehold.co/800x600/166534/ffffff?text=Parque+Natural'" 
+                             alt="Parque Natural de Pucallpa" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-800/90 backdrop-blur-md text-white text-xs px-3 py-1 rounded-full font-medium">
+                            <i class="fa-solid fa-tree mr-1"></i> Ecología
+                        </span>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-amazon-900 mb-2">Parque Natural de Pucallpa</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Área de protección para la flora y fauna silvestre de la Amazonía. Un espacio ideal para aprender sobre la biodiversidad de Ucayali.
+                        </p>
+                        <div class="flex items-center justify-between pt-4 border-t border-gray-100 text-xs font-semibold text-amazon-700">
+                            <span><i class="fa-solid fa-location-dot mr-1"></i> Periferia de la ciudad</span>
+                            <span class="text-amber-600"><i class="fa-solid fa-star"></i> 4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Experiencias & Gastronomía -->
+        <section id="experiencias" class="bg-amazon-900 text-white py-20 relative overflow-hidden">
+            <!-- Adorno sutil de fondo -->
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-emerald-700/20 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-terracotta-500 font-semibold uppercase text-xs tracking-wider">Sabores & Vivencias</span>
+                        <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-6 leading-tight">
+                            Gastronomía Auténtica & Aventura Amazónica
+                        </h2>
+                        <p class="text-emerald-100/80 mb-8 leading-relaxed">
+                            Ucayali deleita los sentidos con aromas exóticos y sabores intensos. Disfruta del plato rey de la selva y navega sus caudalosos ríos al atardecer.
+                        </p>
+
+                        <div class="space-y-4">
+                            <!-- Item 1 -->
+                            <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <div class="w-12 h-12 rounded-lg bg-terracotta-600/30 border border-terracotta-500/50 flex items-center justify-center shrink-0 text-terracotta-500 text-xl">
+                                    <i class="fa-solid fa-utensils"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-lg">El Juane y Tacacho con Cecina</h3>
+                                    <p class="text-sm text-emerald-100/70">Arroz sazonado envuelto en hojas de bijao y el infaltable plátano machacado con cecina ahumada de cerdo.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <div class="w-12 h-12 rounded-lg bg-emerald-600/30 border border-emerald-500/50 flex items-center justify-center shrink-0 text-emerald-400 text-xl">
+                                    <i class="fa-solid fa-ship"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-lg">Paseos en Bote Peke-Peke</h3>
+                                    <p class="text-sm text-emerald-100/70">Navega suavemente por las aguas calmas de Yarinacocha al sonido tradicional del motor artesanal.</p>
+                                </div>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="flex gap-4 p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                                <div class="w-12 h-12 rounded-lg bg-amber-600/30 border border-amber-500/50 flex items-center justify-center shrink-0 text-amber-400 text-xl">
+                                    <i class="fa-solid fa-glass-water"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-lg">Refrescos Exóticos y Camu Camu</h3>
+                                    <p class="text-sm text-emerald-100/70">Prueba el jugo fresco de Camu Camu, la fruta con más vitamina C del mundo, o un helado artesanal de Aguaje.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Galería de imágenes pequeña / Collage -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600" 
+                             onerror="this.src='https://placehold.co/600x800/166534/ffffff?text=Plato+Selva'" 
+                             alt="Gastronomía Selvática" 
+                             class="rounded-2xl h-64 w-full object-cover shadow-lg border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=600" 
+                             onerror="this.src='https://placehold.co/600x800/166534/ffffff?text=Peke+Peke'" 
+                             alt="Paseo en bote" 
+                             class="rounded-2xl h-64 w-full object-cover shadow-lg border border-white/10 mt-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner de Cultura Ancestral -->
+        <section id="cultura" class="py-20 bg-emerald-50 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-emerald-100 flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/3 text-center md:text-left">
+                    <div class="w-16 h-16 bg-terracotta-500/10 text-terracotta-600 rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto md:mx-0">
+                        <i class="fa-solid fa-hands-holding text-terracotta-600"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold text-amazon-900">Arte & Cosmovisión Kené</h3>
+                    <p class="text-sm text-gray-500 mt-2">Patrimonio vivo del pueblo Shipibo-Konibo.</p>
+                </div>
+                <div class="w-full md:w-2/3 border-t md:border-t-0 md:border-l border-gray-200 pt-6 md:pt-0 md:pl-8 text-gray-600 text-sm leading-relaxed">
+                    <p class="mb-4">
+                        El arte <strong>Kené</strong> se manifiesta en cerámicas, textiles y bordados. Sus sofisticados patrones geométricos representan las vías fluviales, la energía de las plantas sagradas y la armonía entre el ser humano y la naturaleza.
+                    </p>
+                    <p>
+                        Al adquirir artesanía directamente en las comunidades, apoyas la conservación de su legado milenario y la economía de las familias artesanas.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-amazon-dark text-white border-t border-amazon-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Columna 1 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center">
+                            <i class="fa-solid fa-feather-pointed text-emerald-400 text-sm"></i>
+                        </div>
+                        <span class="font-serif font-bold text-lg">Ucayali Turismo</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Promoviendo un turismo responsable, sostenible y enriquecedor en la majestuosa selva central del Perú.
+                    </p>
+                </div>
+
+                <!-- Columna 2 -->
+                <div>
+                    <h4 class="font-semibold text-sm text-emerald-300 uppercase tracking-wider mb-4">Contacto e Información</h4>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-location-dot text-emerald-400 w-4"></i>
+                            <span>Pucallpa, Región Ucayali, Perú</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-envelope text-emerald-400 w-4"></i>
+                            <span>turismo@ucayaliperu.pe</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-phone text-emerald-400 w-4"></i>
+                            <span>+51 (061) 57-1000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3 -->
+                <div>
+                    <h4 class="font-semibold text-sm text-emerald-300 uppercase tracking-wider mb-4">Síguenos</h4>
+                    <p class="text-xs text-gray-400 mb-4">Explora fotos y actualizaciones de la Amazonía:</p>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-emerald-600 flex items-center justify-center transition-colors text-white">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-emerald-600 flex items-center justify-center transition-colors text-white">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/10 hover:bg-emerald-600 flex items-center justify-center transition-colors text-white">
+                            <i class="fa-brands fa-youtube text-sm"></i>
+                        </a>
+                        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/10 hover:bg-emerald-600 flex items-center justify-center transition-colors text-white">
+                            <i class="fa-brands fa-tiktok text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-amazon-800 text-center text-xs text-gray-500">
+                <p>&copy; 2026 Turismo Ucayali - Selva Central del Perú. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lógica de Javascript para interacción simple -->
+    <script>
+        // Toggle para el Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>

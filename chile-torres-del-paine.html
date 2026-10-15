@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torres del Paine | La Majestad Salvaje de la Patagonia Chilena</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        display: ['"Cinzel"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        patagonia: {
+                            ice: '#A3CEF1',
+                            glacial: '#274C77',
+                            slate: '#6096BA',
+                            granite: '#1B263B',
+                            deep: '#0D1B2A',
+                            gold: '#D4AF37',
+                            copper: '#C86D51'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom image zoom & overlay glow */
+        .img-zoom-container {
+            overflow: hidden;
+        }
+        .img-zoom-container img {
+            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), filter 0.8s ease;
+        }
+        .img-zoom-container:hover img {
+            transform: scale(1.08);
+        }
+        
+        /* Subtle custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D1B2A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #274C77;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Ambient light gradient text */
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #F3E7C4 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-ice {
+            background: linear-gradient(135deg, #FFFFFF 0%, #A3CEF1 70%, #6096BA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-patagonia-deep text-slate-200 font-sans antialiased selection:bg-patagonia-copper selection:text-white">
+
+    <!-- Header / Navigation Bar -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-patagonia-deep/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border border-patagonia-gold/40 flex items-center justify-center text-patagonia-gold group-hover:border-patagonia-gold transition-colors">
+                    <i class="fa-solid fa-mountain-sun text-lg"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display tracking-[0.25em] text-sm text-white font-bold uppercase">Torres del Paine</span>
+                    <span class="text-[10px] tracking-widest text-patagonia-gold/90 uppercase font-sans">Patagonia Chilena</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm uppercase tracking-widest font-medium text-slate-300">
+                <a href="#story" class="hover:text-patagonia-gold transition-colors">El Origen</a>
+                <a href="#experiences" class="hover:text-patagonia-gold transition-colors">Expediciones</a>
+                <a href="#gallery" class="hover:text-patagonia-gold transition-colors">Galería</a>
+                <a href="#testimonials" class="hover:text-patagonia-gold transition-colors">Crónicas</a>
+                <a href="#contact" class="hover:text-patagonia-gold transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA button -->
+            <div class="hidden md:block">
+                <a href="#contact" class="px-5 py-2.5 rounded-full border border-patagonia-gold text-patagonia-gold text-xs uppercase tracking-widest font-semibold hover:bg-patagonia-gold hover:text-patagonia-deep transition-all duration-300 shadow-lg shadow-patagonia-gold/10">
+                    Planear Travesía
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none p-2 rounded-lg" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-patagonia-deep/95 border-b border-white/10 px-6 py-6 transition-all duration-300">
+            <div class="flex flex-col space-y-4 uppercase tracking-widest text-sm text-slate-300">
+                <a href="#story" class="hover:text-patagonia-gold transition-colors py-1 mobile-link">El Origen</a>
+                <a href="#experiences" class="hover:text-patagonia-gold transition-colors py-1 mobile-link">Expediciones</a>
+                <a href="#gallery" class="hover:text-patagonia-gold transition-colors py-1 mobile-link">Galería</a>
+                <a href="#testimonials" class="hover:text-patagonia-gold transition-colors py-1 mobile-link">Crónicas</a>
+                <a href="#contact" class="hover:text-patagonia-gold transition-colors py-1 mobile-link">Contacto</a>
+                <a href="#contact" class="mt-2 text-center py-3 rounded-full bg-patagonia-gold text-patagonia-deep font-bold tracking-widest mobile-link">
+                    Planear Travesía
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Image with cinematic overlay -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=2000&q=85" 
+                alt="Cuernos del Paine al Amanecer" 
+                class="w-full h-full object-cover object-center scale-105 animate-[pulse_10s_ease-in-out_infinite]"
+                loading="eager"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-patagonia-deep via-patagonia-deep/60 to-patagonia-deep/40"></div>
+            <div class="absolute inset-0 bg-radial-vignette opacity-70"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-24">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
+                <i class="fa-solid fa-compass text-patagonia-gold text-xs animate-spin" style="animation-duration: 12s;"></i>
+                <span class="text-xs uppercase tracking-[0.3em] text-patagonia-ice font-semibold">Reserva de la Biósfera UNESCO • Chile</span>
+            </div>
+
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight leading-none mb-6 text-white drop-shadow-2xl">
+                El Fin del Mundo <br/>
+                <span class="text-gradient-gold italic font-serif normal-case font-normal">te aguarda.</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 font-light leading-relaxed mb-10">
+                Adéntrate en el santuario natural más conmovedor del planeta. Agujas de granito que tocan el cielo, glaciares milenarios y el rugido indómito del viento austral.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="#experiences" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-patagonia-gold to-yellow-600 text-patagonia-deep font-semibold uppercase tracking-widest text-xs hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                    <span>Explorar Circuitos</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-medium uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center space-x-2">
+                    <i class="fa-regular fa-image"></i>
+                    <span>Ver Galería Emocional</span>
+                </a>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-16 max-w-4xl mx-auto border-t border-white/15 mt-16 text-left sm:text-center">
+                <div class="space-y-1">
+                    <p class="font-display text-2xl sm:text-3xl font-bold text-patagonia-gold">227.000</p>
+                    <p class="text-xs tracking-wider uppercase text-slate-400">Hectáreas Protegidas</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-display text-2xl sm:text-3xl font-bold text-patagonia-gold">2.884 m</p>
+                    <p class="text-xs tracking-wider uppercase text-slate-400">Paine Grande</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-display text-2xl sm:text-3xl font-bold text-patagonia-gold">8ª Maravilla</p>
+                    <p class="text-xs tracking-wider uppercase text-slate-400">Del Mundo Natural</p>
+                </div>
+                <div class="space-y-1">
+                    <p class="font-display text-2xl sm:text-3xl font-bold text-patagonia-gold">100%</p>
+                    <p class="text-xs tracking-wider uppercase text-slate-400">Naturaleza Pura</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll down indicator -->
+        <a href="#story" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 hover:text-white transition-colors flex flex-col items-center z-10">
+            <span class="text-[10px] uppercase tracking-widest mb-1 font-sans">Descubrir</span>
+            <i class="fa-solid fa-chevron-down animate-bounce text-sm text-patagonia-gold"></i>
+        </a>
+    </section>
+
+    <!-- SECTION: STORYTELLING / EMOTION -->
+    <section id="story" class="relative py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-patagonia-deep via-[#112238] to-patagonia-deep overflow-hidden">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <div class="inline-flex items-center space-x-2 text-patagonia-gold text-xs uppercase tracking-[0.3em] font-semibold">
+                    <span class="w-8 h-px bg-patagonia-gold"></span>
+                    <span>El Vínculo Primordial</span>
+                </div>
+
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
+                    Donde el silencio es tan inmenso que <span class="italic font-serif text-patagonia-ice">puedes oír el latir de la tierra.</span>
+                </h2>
+
+                <p class="text-slate-300 leading-relaxed font-light text-base sm:text-lg">
+                    En el corazón de la Patagonia Chilena, el viento no es solo clima; es un narrador ancestral. Viaja miles de kilómetros a través del Océano Austral hasta chocar contra las agujas monolíticas de granito que han desafiado el tiempo geológico durante millones de años.
+                </p>
+
+                <p class="text-slate-300 leading-relaxed font-light text-base sm:text-lg">
+                    Caminar aquí no es simplemente hacer trekking: es una catarsis. Es encontrarte cara a cara con la fuerza azul de témpanos flotantes, el color turquesa lechoso de los lagos alimentados por deshielos eternos y la mirada serena del guanaco sobre las estepas infinitas.
+                </p>
+
+                <div class="pt-4 border-l-2 border-patagonia-gold pl-6 italic font-serif text-patagonia-ice text-lg">
+                    “Quien viaja a las Torres del Paine no regresa siendo el mismo. Deja parte de su alma entre los valles y se lleva la inmensidad en el pecho.”
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80" 
+                        alt="Lago Pehoé reflejando las Torres" 
+                        class="w-full h-[520px] object-cover group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-patagonia-deep via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-patagonia-deep/70 backdrop-blur-md border border-white/15">
+                        <p class="text-patagonia-gold font-display text-xs tracking-widest uppercase font-semibold">Reflejo en Lago Pehoé</p>
+                        <p class="text-xs text-slate-300 mt-1">Luz crepuscular sobre los Cuernos del Paine, Provincia de Última Esperanza.</p>
+                    </div>
+                </div>
+
+                <!-- Floating Badge -->
+                <div class="hidden sm:flex absolute -bottom-6 -left-6 bg-patagonia-granite/90 backdrop-blur-md border border-patagonia-gold/40 p-4 rounded-xl shadow-xl items-center space-x-3">
+                    <div class="w-12 h-12 rounded-lg bg-patagonia-deep flex items-center justify-center text-patagonia-gold text-2xl">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-patagonia-gold uppercase font-bold tracking-wider">Aventura Sostenible</p>
+                        <p class="text-[11px] text-slate-300">Certificación Leave No Trace & Conaf</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: EXPERIENCES / CIRCUITOS -->
+    <section id="experiences" class="py-28 px-4 sm:px-6 lg:px-8 bg-patagonia-deep border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-patagonia-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-3">Travesías de Clase Mundial</span>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold text-white uppercase tracking-tight">Expediciones Legendarias</h2>
+                <p class="text-slate-400 mt-4 text-base font-light">Diseñadas para despertar tus sentidos, desde travesías de varios días hasta navegaciones entre témpanos de hielo cobalto.</p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Experience 1 -->
+                <div class="group rounded-2xl bg-[#142337] border border-white/10 overflow-hidden flex flex-col hover:border-patagonia-gold/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-patagonia-glacial/40">
+                    <div class="h-60 overflow-hidden relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=800&q=80" 
+                            alt="Circuito W Trek" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy"
+                        />
+                        <span class="absolute top-4 right-4 bg-patagonia-deep/80 backdrop-blur-md text-patagonia-gold text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-patagonia-gold/30">
+                            4-5 Días
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 text-xs text-patagonia-slate mb-2">
+                                <i class="fa-solid fa-person-hiking text-patagonia-gold"></i>
+                                <span>Trekking Clásico • 76 km</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-white mb-3 group-hover:text-patagonia-gold transition-colors">Circuito W</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed font-light">
+                                La ruta más aclamada del cono sur: Valle del Francés, Mirador Británico y las gigantescas torres frente a la laguna glacial.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-slate-400">Dificultad: Media</span>
+                            <a href="#contact" class="text-patagonia-gold hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center space-x-1">
+                                <span>Reservar</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="group rounded-2xl bg-[#142337] border border-white/10 overflow-hidden flex flex-col hover:border-patagonia-gold/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-patagonia-glacial/40">
+                    <div class="h-60 overflow-hidden relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" 
+                            alt="Glaciar Grey Hielos Patagónicos" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy"
+                        />
+                        <span class="absolute top-4 right-4 bg-patagonia-deep/80 backdrop-blur-md text-patagonia-ice text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-patagonia-ice/30">
+                            Aventura Polar
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 text-xs text-patagonia-slate mb-2">
+                                <i class="fa-solid fa-ship text-patagonia-ice"></i>
+                                <span>Navegación & Kayak</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-white mb-3 group-hover:text-patagonia-gold transition-colors">Glaciar Grey</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed font-light">
+                                Navega a escasos metros de una muralla de hielo de más de 30 metros de altura que desciende del imponente Campo de Hielo Sur.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-slate-400">Todo Público</span>
+                            <a href="#contact" class="text-patagonia-gold hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center space-x-1">
+                                <span>Reservar</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="group rounded-2xl bg-[#142337] border border-white/10 overflow-hidden flex flex-col hover:border-patagonia-gold/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-patagonia-glacial/40">
+                    <div class="h-60 overflow-hidden relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" 
+                            alt="Base Torres al Amanecer" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy"
+                        />
+                        <span class="absolute top-4 right-4 bg-patagonia-deep/80 backdrop-blur-md text-patagonia-gold text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-patagonia-gold/30">
+                            Amanecer Dorado
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 text-xs text-patagonia-slate mb-2">
+                                <i class="fa-solid fa-sun text-yellow-400"></i>
+                                <span>Día Completo • 22 km</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-white mb-3 group-hover:text-patagonia-gold transition-colors">Mirador Base Torres</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed font-light">
+                                La postal definitiva. Asciende de madrugada a través del bosque de lengas para presenciar cómo el sol incendia las tres agujas de granito.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-slate-400">Dificultad: Exigente</span>
+                            <a href="#contact" class="text-patagonia-gold hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center space-x-1">
+                                <span>Reservar</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 4 -->
+                <div class="group rounded-2xl bg-[#142337] border border-white/10 overflow-hidden flex flex-col hover:border-patagonia-gold/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-patagonia-glacial/40">
+                    <div class="h-60 overflow-hidden relative">
+                        <img 
+                            src="https://images.unsplash.com/photo-1534187886935-1e1236e856c3?auto=format&fit=crop&w=800&q=80" 
+                            alt="Fauna patagónica Guanaco" 
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            loading="lazy"
+                        />
+                        <span class="absolute top-4 right-4 bg-patagonia-deep/80 backdrop-blur-md text-emerald-400 text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-emerald-400/30">
+                            Fauna & Flora
+                        </span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-2 text-xs text-patagonia-slate mb-2">
+                                <i class="fa-solid fa-camera text-emerald-400"></i>
+                                <span>Safari Fotográfico</span>
+                            </div>
+                            <h3 class="font-display text-xl font-bold text-white mb-3 group-hover:text-patagonia-gold transition-colors">Safari Patagónico</h3>
+                            <p class="text-slate-300 text-sm leading-relaxed font-light">
+                                Observación respetuosa del puma en su hábitat salvaje, manadas de guanacos libres, cóndores andinos sobrevolando los riscos y flamencos.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <span class="text-xs uppercase tracking-wider text-slate-400">Exclusivo & Guiado</span>
+                            <a href="#contact" class="text-patagonia-gold hover:text-white text-xs font-semibold uppercase tracking-wider flex items-center space-x-1">
+                                <span>Reservar</span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Callout banner -->
+            <div class="mt-16 rounded-2xl bg-gradient-to-r from-patagonia-glacial/40 via-patagonia-deep to-patagonia-glacial/20 border border-white/10 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2">
+                    <h4 class="font-display text-2xl font-bold text-white">¿Buscas una expedición privada a medida?</h4>
+                    <p class="text-sm text-slate-300 font-light max-w-xl">Coordinamos lodges de lujo, guías bilingües certificados WFR, traslados en helicóptero y campamentos premium sustentables.</p>
+                </div>
+                <a href="#contact" class="px-7 py-3 rounded-full bg-white text-patagonia-deep font-bold text-xs uppercase tracking-widest hover:bg-patagonia-gold transition-colors whitespace-nowrap">
+                    Consultar Itinerario VIP
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: IMMERSIVE GALLERY -->
+    <section id="gallery" class="py-28 px-4 sm:px-6 lg:px-8 bg-[#0b1724]">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-patagonia-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Ventana al Asombro</span>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-white uppercase tracking-tight">Galería Emocional</h2>
+                </div>
+                <p class="text-slate-400 max-w-md text-sm mt-4 md:mt-0 font-light">
+                    Haz clic en cada imagen para experimentar la inmensidad de este rincón salvaje en alta definición.
+                </p>
+            </div>
+
+            <!-- Photo Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Item 1 -->
+                <div class="img-zoom-container relative h-80 rounded-2xl overflow-hidden cursor-pointer group border border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85', 'Los Cuernos del Paine', 'Amanecer dorado iluminando las formaciones geológicas más imponentes de Sudamérica.')">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80" alt="Cuernos del Paine" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-patagonia-gold text-xs uppercase tracking-wider font-semibold">Cordillera Paine</span>
+                        <h4 class="text-white font-display text-lg font-bold">Los Cuernos al Alba</h4>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="img-zoom-container relative h-80 rounded-2xl overflow-hidden cursor-pointer group border border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85', 'Laguna Base Torres', 'Las tres torres de granito reflejadas en el silencio helado de la laguna.')">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Laguna y Torres" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-patagonia-gold text-xs uppercase tracking-wider font-semibold">Hito Geológico</span>
+                        <h4 class="text-white font-display text-lg font-bold">Catedrales de Piedra</h4>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="img-zoom-container relative h-80 rounded-2xl overflow-hidden cursor-pointer group border border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85', 'Glaciar Grey Milenario', 'Hielo comprimido por milenios que refleja una gama infinita de azules y turquesas.')">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Témpanos Glaciares" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-patagonia-gold text-xs uppercase tracking-wider font-semibold">Campo de Hielo Sur</span>
+                        <h4 class="text-white font-display text-lg font-bold">Hielo Ancestral</h4>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="img-zoom-container relative h-80 rounded-2xl overflow-hidden cursor-pointer group border border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1800&q=85', 'Lago Pehoé', 'Aguas turquesas que contrastan con los macizos nevados en el atardecer magallánico.')">
+                    <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" alt="Lago Pehoé" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-patagonia-gold text-xs uppercase tracking-wider font-semibold">Espejo Austral</span>
+                        <h4 class="text-white font-display text-lg font-bold">Serenidad del Pehoé</h4>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="img-zoom-container relative h-80 rounded-2xl overflow-hidden cursor-pointer group border border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1534187886935-1e1236e856c3?auto=format&fit=crop&w=1800&q=85', 'Fauna Austral: Guanaco', 'Los centinelas de la estepa patagónica contemplando las montañas.')">
+                    <img src="https://images.unsplash.com/photo-1534187886935-1e1236e856c3?auto=format&fit=crop&w=800&q=80" alt="Guanaco en la Estepa" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-patagonia-gold text-xs uppercase tracking-wider font-semibold">Fauna Endémica</span>
+                        <h4 class="text-white font-display text-lg font-bold">Vigías de la Estepa</h4>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="img-zoom-container relative h-80 rounded-2xl overflow-hidden cursor-pointer group border border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1800&q=85', 'Cascada Río Paine', 'Fuerza hídrica salvaje nacida del deshielo de los ventisqueros.')">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Cascadas del Paine" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-patagonia-gold text-xs uppercase tracking-wider font-semibold">Salto Grande</span>
+                        <h4 class="text-white font-display text-lg font-bold">Torrentes Glaciares</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/95 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white/70 hover:text-white text-3xl focus:outline-none p-2" aria-label="Cerrar vista completa">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-5xl w-full flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="" class="max-h-[75vh] w-auto max-w-full rounded-xl shadow-2xl object-contain border border-white/10">
+            <div class="mt-4 text-center">
+                <h3 id="lightbox-title" class="font-display text-2xl text-patagonia-gold font-bold"></h3>
+                <p id="lightbox-desc" class="text-slate-300 text-sm mt-1 max-w-xl font-light"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION: TESTIMONIALS -->
+    <section id="testimonials" class="py-28 px-4 sm:px-6 lg:px-8 bg-patagonia-deep relative border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-patagonia-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Ecos de Aventureros</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white uppercase tracking-tight">Crónicas desde el Viento</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-patagonia-granite/40 border border-white/10 p-8 rounded-2xl relative flex flex-col justify-between">
+                    <div class="text-patagonia-gold/40 text-4xl font-serif absolute top-6 right-6">“</div>
+                    <p class="text-slate-300 italic font-serif leading-relaxed text-base mb-6">
+                        Ver el sol nacer sobre la Base Torres después de 4 horas de ascenso bajo las estrellas fue el instante más espiritual y emocionante de mi vida. La Patagonia te transforma por dentro.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-patagonia-glacial flex items-center justify-center text-white font-bold text-sm">
+                            EM
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Elena Moretti</h4>
+                            <p class="text-slate-400 text-xs">Milán, Italia • Circuito W</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-patagonia-granite/40 border border-white/10 p-8 rounded-2xl relative flex flex-col justify-between">
+                    <div class="text-patagonia-gold/40 text-4xl font-serif absolute top-6 right-6">“</div>
+                    <p class="text-slate-300 italic font-serif leading-relaxed text-base mb-6">
+                        La navegación al Glaciar Grey parece sacada de un sueño antártico. El azul profundo de los témpanos y el silencio sepulcral solo roto por el crujir del hielo es algo inolvidable.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold text-sm">
+                            SK
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Sebastian Krause</h4>
+                            <p class="text-slate-400 text-xs">Múnich, Alemania • Travesía Glaciares</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-patagonia-granite/40 border border-white/10 p-8 rounded-2xl relative flex flex-col justify-between">
+                    <div class="text-patagonia-gold/40 text-4xl font-serif absolute top-6 right-6">“</div>
+                    <p class="text-slate-300 italic font-serif leading-relaxed text-base mb-6">
+                        La organización, el respeto estricto por la conservación y los senderos impolutos. Sentir la fuerza del viento austral te recuerda lo pequeños que somos ante la naturaleza.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-4 border-t border-white/10">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-sm">
+                            CR
+                        </div>
+                        <div>
+                            <h4 class="text-white text-sm font-semibold">Camila Riquelme</h4>
+                            <p class="text-slate-400 text-xs">Santiago, Chile • Safari Fotográfico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION: CONTACT & RESERVATION -->
+    <section id="contact" class="py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0b1724] to-patagonia-deep relative">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Contact Info & Context -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-patagonia-gold text-xs uppercase tracking-[0.3em] font-semibold block mb-2">Comienza Tu Viaje</span>
+                        <h2 class="font-display text-3xl sm:text-5xl font-bold text-white uppercase tracking-tight">Atención & Base Austral</h2>
+                        <p class="text-slate-300 mt-4 font-light text-base leading-relaxed">
+                            Nuestros especialistas en expediciones patagónicas te asesorarán en equipamiento, condiciones meteorológicas, permisos de Conaf y reservas con meses de anticipación.
+                        </p>
+                    </div>
+
+                    <!-- Contact details -->
+                    <div class="space-y-6">
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-patagonia-glacial/30 border border-patagonia-ice/20 flex items-center justify-center text-patagonia-ice shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Centro de Operaciones</h4>
+                                <p class="text-slate-300 text-sm mt-1">Av. Eberhard 540, Puerto Natales</p>
+                                <p class="text-slate-400 text-xs">Región de Magallanes y de la Antártica Chilena, Chile</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-patagonia-glacial/30 border border-patagonia-ice/20 flex items-center justify-center text-patagonia-ice shrink-0">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Teléfonos de Expedición</h4>
+                                <p class="text-slate-300 text-sm mt-1">Fono Ficticio: <a href="tel:+56612984321" class="hover:text-patagonia-gold transition-colors">+56 61 298 4321</a></p>
+                                <p class="text-slate-300 text-sm">WhatsApp Travesías: <a href="https://wa.me/56987654321" class="text-emerald-400 hover:underline">+56 9 8765 4321</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-patagonia-glacial/30 border border-patagonia-ice/20 flex items-center justify-center text-patagonia-ice shrink-0">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Correo Electrónico</h4>
+                                <p class="text-slate-300 text-sm mt-1">
+                                    <a href="mailto:contacto@exploratorresdelpaine.cl" class="hover:text-patagonia-gold transition-colors">
+                                        contacto@exploratorresdelpaine.cl
+                                    </a>
+                                </p>
+                                <p class="text-slate-400 text-xs">Respuesta promedio en menos de 24 horas</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-patagonia-glacial/30 border border-patagonia-ice/20 flex items-center justify-center text-patagonia-ice shrink-0">
+                                <i class="fa-solid fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm uppercase tracking-wider">Horario Austral</h4>
+                                <p class="text-slate-300 text-sm mt-1">Lunes a Domingo: 08:30 – 20:30 hrs</p>
+                                <p class="text-slate-400 text-xs">GMT-3 (Hora de Magallanes)</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Stylized Region Map Card -->
+                    <div class="p-5 rounded-2xl bg-[#142337]/70 border border-white/10 flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-map-location-dot text-patagonia-gold text-2xl"></i>
+                            <div>
+                                <p class="text-xs uppercase tracking-widest text-slate-300 font-semibold">Distancia Parque - Base</p>
+                                <p class="text-xs text-slate-400">112 km desde Puerto Natales por Ruta Y-290</p>
+                            </div>
+                        </div>
+                        <span class="text-xs px-3 py-1 rounded bg-patagonia-deep text-patagonia-gold border border-patagonia-gold/30">2h Ruta</span>
+                    </div>
+
+                </div>
+
+                <!-- Booking / Inquiry Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-[#142337] border border-white/15 p-8 sm:p-10 rounded-3xl shadow-2xl relative">
+                        
+                        <div class="mb-8">
+                            <h3 class="font-display text-2xl font-bold text-white uppercase tracking-wider">Solicitud de Cotización y Cupos</h3>
+                            <p class="text-slate-400 text-xs mt-1">Temporada recomendada: Octubre a Abril. Cupos en refugios limitados.</p>
+                        </div>
+
+                        <!-- User Feedback Message Box -->
+                        <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl border text-sm transition-all duration-300"></div>
+
+                        <form id="reservation-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="name">Nombre Completo *</label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        required 
+                                        placeholder="Ej: Sofía Valenzuela"
+                                        class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                    />
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="email">Correo Electrónico *</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        required 
+                                        placeholder="tuemail@ejemplo.com"
+                                        class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="circuit">Circuito de Interés *</label>
+                                    <select 
+                                        id="circuit" 
+                                        required
+                                        class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                    >
+                                        <option value="" disabled selected>Selecciona tu expedición</option>
+                                        <option value="Circuito W Clásico (5D/4N)">Circuito W Clásico (5D/4N)</option>
+                                        <option value="Circuito O Integral Macizo Paine (8D/7N)">Circuito O Integral (8D/7N)</option>
+                                        <option value="Mirador Base Torres Full Day">Mirador Base Torres Full Day</option>
+                                        <option value="Navegación Glaciar Grey & Hielos">Navegación Glaciar Grey</option>
+                                        <option value="Safari de Vida Silvestre & Puma Tracking">Safari Puma & Fauna Salvaje</option>
+                                        <option value="Expedición a Medida / VIP Privado">Expedición a Medida / VIP</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="travelers">Número de Viajeros</label>
+                                    <select 
+                                        id="travelers"
+                                        class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                    >
+                                        <option value="1">1 Aventurero (Solo)</option>
+                                        <option value="2" selected>2 Personas (Pareja / Amigos)</option>
+                                        <option value="3-4">3 a 4 Personas</option>
+                                        <option value="5+">Grupo de 5+ personas</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="date">Fecha Estimada de Llegada</label>
+                                    <input 
+                                        type="date" 
+                                        id="date" 
+                                        class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                    />
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="stay-type">Modalidad de Alojamiento</label>
+                                    <select 
+                                        id="stay-type"
+                                        class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                    >
+                                        <option value="Refugios de Montaña">Refugios de Montaña</option>
+                                        <option value="Camping Premium Equipado">Camping Premium Equipado</option>
+                                        <option value="Hoteles y Lodges de Lujo">Hoteles & Eco-Lodges de Lujo</option>
+                                        <option value="Mixto">Combinación personalizada</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2 font-medium" for="notes">Requerimientos Especiales o Consultas</label>
+                                <textarea 
+                                    id="notes" 
+                                    rows="3" 
+                                    placeholder="Cuéntanos sobre tu condición física, preferencias alimentarias o si requieres equipo de montaña arrendado..."
+                                    class="w-full bg-patagonia-deep border border-white/20 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-patagonia-gold transition-colors"
+                                ></textarea>
+                            </div>
+
+                            <button 
+                                type="submit" 
+                                id="submit-btn"
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-patagonia-gold to-yellow-600 text-patagonia-deep font-bold text-xs uppercase tracking-[0.2em] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:brightness-110 transition-all duration-300 flex items-center justify-center space-x-2"
+                            >
+                                <i class="fa-solid fa-paper-plane text-xs"></i>
+                                <span>Solicitar Disponibilidad e Itinerario</span>
+                            </button>
+
+                            <p class="text-[11px] text-center text-slate-400">
+                                Al enviar esta solicitud, confirmas tu compromiso de acatar las normativas de conservación ambiental de CONAF.
+                            </p>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#070e17] text-slate-400 py-16 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-full border border-patagonia-gold/40 flex items-center justify-center text-patagonia-gold">
+                            <i class="fa-solid fa-mountain-sun"></i>
+                        </div>
+                        <span class="font-display tracking-[0.2em] text-sm text-white font-bold uppercase">Torres del Paine</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed font-light">
+                        Portal oficial de promoción turística y expediciones responsables al Parque Nacional Torres del Paine, Patagonia Austral de Chile.
+                    </p>
+                    <div class="flex space-x-4 pt-2 text-slate-300">
+                        <a href="#" class="hover:text-patagonia-gold transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="hover:text-patagonia-gold transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook text-lg"></i></a>
+                        <a href="#" class="hover:text-patagonia-gold transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube text-lg"></i></a>
+                        <a href="#" class="hover:text-patagonia-gold transition-colors" aria-label="TikTok"><i class="fa-brands fa-tiktok text-lg"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-3">
+                    <h5 class="text-white text-xs uppercase tracking-widest font-semibold">Circuitos Clásicos</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#experiences" class="hover:text-patagonia-gold transition-colors">Circuito W Tradicional</a></li>
+                        <li><a href="#experiences" class="hover:text-patagonia-gold transition-colors">Circuito O Integral</a></li>
+                        <li><a href="#experiences" class="hover:text-patagonia-gold transition-colors">Mirador Base Torres Amanecer</a></li>
+                        <li><a href="#experiences" class="hover:text-patagonia-gold transition-colors">Navegación Lago y Glaciar Grey</a></li>
+                        <li><a href="#experiences" class="hover:text-patagonia-gold transition-colors">Valle del Francés y Mirador Británico</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-3">
+                    <h5 class="text-white text-xs uppercase tracking-widest font-semibold">Consejos de Montaña</h5>
+                    <ul class="text-xs space-y-2">
+                        <li><a href="#story" class="hover:text-patagonia-gold transition-colors">Regla de las 3 Capas (Vestimenta)</a></li>
+                        <li><a href="#story" class="hover:text-patagonia-gold transition-colors">No Deje Rastro (Leave No Trace)</a></li>
+                        <li><a href="#story" class="hover:text-patagonia-gold transition-colors">Temporadas & Clima Patagónico</a></li>
+                        <li><a href="#contact" class="hover:text-patagonia-gold transition-colors">Reserva de Campamentos CONAF</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Badges -->
+                <div class="space-y-3">
+                    <h5 class="text-white text-xs uppercase tracking-widest font-semibold">Sellos de Sostenibilidad</h5>
+                    <div class="space-y-2 text-xs">
+                        <div class="p-2.5 rounded-lg bg-white/5 border border-white/10 flex items-center space-x-3">
+                            <i class="fa-solid fa-seedling text-emerald-400 text-base"></i>
+                            <div>
+                                <p class="text-white font-medium">Turismo Sustentable</p>
+                                <p class="text-[10px] text-slate-400">Protección del Ecosistema Austral</p>
+                            </div>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-white/5 border border-white/10 flex items-center space-x-3">
+                            <i class="fa-solid fa-shield-halved text-patagonia-ice text-base"></i>
+                            <div>
+                                <p class="text-white font-medium">Guías WFR Certificados</p>
+                                <p class="text-[10px] text-slate-400">Primeros Auxilios en Áreas Remotas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Row -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>© 2026 Expedición Torres del Paine. Publicidad turística de demostración. Todos los derechos reservados.</p>
+                <div class="flex space-x-6 text-xs">
+                    <a href="#" class="hover:text-slate-300 transition-colors">Términos de Reserva</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Política Ambiental</a>
+                    <a href="#" class="hover:text-slate-300 transition-colors">Privacidad</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Header scroll blur effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-xl', 'bg-patagonia-deep/95');
+                header.classList.remove('bg-patagonia-deep/80');
+            } else {
+                header.classList.remove('shadow-xl', 'bg-patagonia-deep/95');
+                header.classList.add('bg-patagonia-deep/80');
+            }
+        });
+
+        // Interactive Lightbox
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+
+        function openLightbox(url, title, desc) {
+            lightboxImg.src = url;
+            lightboxTitle.innerText = title;
+            lightboxDesc.innerText = desc;
+            lightboxModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) {
+                closeLightbox();
+            }
+        });
+
+        // ESC key to close lightbox
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Form submission simulation (without alert/confirm)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const submitBtn = document.getElementById('submit-btn');
+            const feedback = document.getElementById('form-feedback');
+            const name = document.getElementById('name').value;
+            const circuit = document.getElementById('circuit').value;
+
+            // Change button state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-xs"></i> <span>Verificando disponibilidad...</span>`;
+
+            setTimeout(() => {
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<i class="fa-solid fa-check text-xs"></i> <span>¡Solicitud Enviada con Éxito!</span>`;
+                submitBtn.classList.remove('from-patagonia-gold', 'to-yellow-600');
+                submitBtn.classList.add('bg-emerald-600', 'text-white');
+
+                // Display success banner
+                feedback.className = "mb-6 p-4 rounded-xl border border-emerald-500/40 bg-emerald-950/60 text-emerald-200 text-sm block";
+                feedback.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-lg mt-0.5"></i>
+                        <div>
+                            <p class="font-bold text-white">¡Gracias, ${name}!</p>
+                            <p class="text-xs text-emerald-200 mt-1">Hemos registrado tu interés en <strong>${circuit}</strong>. Nuestro equipo de base en Puerto Natales te contactará al correo proporcionado en breve con la propuesta y disponibilidad de refugios.</p>
+                        </div>
+                    </div>
+                `;
+
+                // Reset inputs except feedback
+                document.getElementById('reservation-form').reset();
+
+                // Revert button text after 5 seconds
+                setTimeout(() => {
+                    submitBtn.classList.remove('bg-emerald-600', 'text-white');
+                    submitBtn.classList.add('from-patagonia-gold', 'to-yellow-600');
+                    submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane text-xs"></i> <span>Solicitar Disponibilidad e Itinerario</span>`;
+                }, 6000);
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
